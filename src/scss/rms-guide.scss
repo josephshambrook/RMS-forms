@@ -1,0 +1,41 @@
+/*
+ * Styles specifically for the styleguide
+ * Not to be included on other sites
+ */
+
+.guide-layout {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;
+}
+
+nav {
+  grid-column: 1 / 3;
+}
+
+aside {
+  padding: 0.625rem;
+}
+
+main {
+  padding: 0.625rem;
+}
+
+footer {
+  background-color: var(--gray-dark);
+  color: var(--white);
+  grid-column: 1 / 3;
+  padding-bottom: 0.3125rem;
+  padding-top: 0.3125rem;
+}
+
+[id^="section-"] {
+  border-bottom: 1px solid var(--gray);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section-example {
+  margin-top: 2rem;
+}

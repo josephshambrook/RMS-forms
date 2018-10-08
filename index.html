@@ -6,17 +6,130 @@
   <title>RMS - Styleguide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="./dist/css/rms.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./dist/css/rms-guide.css" />
 </head>
 <body>
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-secondary">Secondary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-light">Light</button>
-  <button type="button" class="btn btn-dark">Dark</button>
+  <div class="guide-layout">
+    <nav class="navbar navbar-light bg-primary">
+      <span class="navbar-brand mb-0 h1 text-light">RMS Components</span>
+    </nav>
 
-  <button type="button" class="btn btn-link">Link</button>
+    <aside>
+      <nav id="navbar-example3" class="navbar navbar-light bg-light">
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#section-buttons">Buttons</a>
+          <a class="nav-link" href="#section-dropdowns">Dropdowns</a>
+          <a class="nav-link" href="#section-inputs">Inputs</a>
+        </nav>
+      </nav>
+    </aside>
+
+    <main>
+
+      <div id="section-intro">
+        <h1>RMS Components Styleguide</h1>
+
+        <p>This styleguide is intended to provide examples of key components, for use in RMS forms. The components are originally provided by <a href="https://getbootstrap.com">Bootstrap</a>, which has then been customised slightly with UI tweaks and custom colours.</p>
+
+        <p>The <code>rms.css</code> file inside <code>dist/css</code> contains the compiled Bootstrap CSS + RMS customisations, and needs to be included in projects using these components.</p>
+
+        <p>Every component here is compatible with Bootstrap's customisation capabilities, such as sizing and colours. This styleguide does not go through all of the possible examples, as Bootstrap details them way better. To see them all, <a href="http://getbootstrap.com/docs/4.1">view Bootstrap's full documentation</a>.</p>
+
+        <p>Note: Some of the examples are inside containers with a fixed width, to prevent them from spanning unusually wide.</p>
+      </div>
+
+      <div id="section-buttons">
+        <h2>Buttons</h2>
+        <h6>
+          <a href="http://getbootstrap.com/docs/4.1/components/buttons/">Bootstrap Link</a>
+        </h6>
+
+        <div class="section-example">
+          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-secondary">Secondary</button>
+          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-danger">Danger</button>
+          <button type="button" class="btn btn-warning">Warning</button>
+          <button type="button" class="btn btn-info">Info</button>
+          <button type="button" class="btn btn-light">Light</button>
+          <button type="button" class="btn btn-dark">Dark</button>
+
+          <button type="button" class="btn btn-link">Link</button>
+        </div>
+      </div>
+
+      <div id="section-dropdowns">
+        <h2>Dropdowns</h2>
+        <h6>
+          <a href="http://getbootstrap.com/docs/4.1/components/forms/#form-controls">Bootstrap Link</a>
+        </h6>
+
+        <div class="section-example">
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Option 1</option>
+                      <option>Option 2</option>
+                      <option>Option 3</option>
+                      <option>Option 4</option>
+                      <option>Option 5</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="section-inputs">
+        <h2>Inputs</h2>
+        <h6>
+          <a href="http://getbootstrap.com/docs/4.1/components/forms/#form-controls">Bootstrap Link</a>
+        </h6>
+
+        <div class="section-example">
+            <div class="container">
+              <div class="row">
+                <div class="col-6">
+                  <form>
+
+                    <div class="form-group">
+                      <label for="exampleInput1">
+                        Standard Input
+                      </label>
+                      <input type="text" class="form-control" />
+                      <small id="emailHelp" class="form-text text-muted">This is helper text that can be optionally included with form elements.</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInput1">
+                        Standard Input
+                      </label>
+                      <input type="text" class="form-control" />
+                      <small id="emailHelp" class="form-text text-muted">This input is invalid.</small>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">RMS + AND Digital</div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
