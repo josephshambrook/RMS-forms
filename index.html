@@ -10,8 +10,16 @@
 </head>
 <body>
   <div class="guide-layout">
-    <nav class="navbar navbar-light bg-primary">
-      <span class="navbar-brand mb-0 h1 text-light">RMS Components</span>
+    <nav class="navbar navbar-light bg-light">
+      <!-- <span class="navbar-brand mb-0 h1 text-light">RMS Components</span> -->
+      <div class="navbar-brand">
+        <img
+        src="https://www.retailmerchantservices.co.uk/media/2015/rms-logo-svg.svg"
+        alt="Retail Merchant Services"
+        />
+        <span class="ml-1">Styleguide</span>
+      </div>
+
     </nav>
 
     <aside>
@@ -20,6 +28,8 @@
           <a class="nav-link" href="#section-buttons">Buttons</a>
           <a class="nav-link" href="#section-dropdowns">Dropdowns</a>
           <a class="nav-link" href="#section-inputs">Inputs</a>
+          <a class="nav-link" href="#section-checkbox">Checkboxes</a>
+          <a class="nav-link" href="#section-radio">Radio buttons</a>
         </nav>
       </nav>
     </aside>
@@ -93,39 +103,109 @@
         </h6>
 
         <div class="section-example">
-            <div class="container">
-              <div class="row">
-                <div class="col-6">
-                  <form>
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <form>
 
-                    <div class="form-group">
-                      <label for="exampleInput1">
-                        Standard Input
-                      </label>
-                      <input type="text" class="form-control" />
-                      <small id="emailHelp" class="form-text text-muted">This is helper text that can be optionally included with form elements.</small>
-                    </div>
+                  <div class="form-group">
+                    <label for="exampleInput1">
+                      Standard Input
+                    </label>
+                    <input type="text" class="form-control" />
+                    <small id="emailHelp" class="form-text text-muted">This is helper text that can be optionally included with form elements.</small>
+                  </div>
 
-                    <div class="form-group">
-                      <label for="exampleInput1">
-                        Invalid Input
-                      </label>
-                      <input type="text" class="form-control is-invalid" />
-                      <small id="emailHelp" class="invalid-feedback">This piece of text only appears if the above input has the class <code>is-invalid</code>.</small>
-                    </div>
+                  <div class="form-group">
+                    <label for="exampleInput1">
+                      Invalid Input
+                    </label>
+                    <input type="text" class="form-control is-invalid" />
+                    <small id="emailHelp" class="invalid-feedback">This piece of text only appears if the above input has the class <code>is-invalid</code>.</small>
+                  </div>
 
-                    <div class="form-group">
-                      <label for="exampleInput1">
-                        Valid Input
-                      </label>
-                      <input type="text" class="form-control is-valid" />
-                      <small id="emailHelp" class="valid-feedback">This piece of text only appears if the above input has the class <code>is-valid</code>.</small>
-                    </div>
+                  <div class="form-group">
+                    <label for="exampleInput1">
+                      Valid Input
+                    </label>
+                    <input type="text" class="form-control is-valid" />
+                    <small id="emailHelp" class="valid-feedback">This piece of text only appears if the above input has the class <code>is-valid</code>.</small>
+                  </div>
 
-                  </form>
-                </div>
+                </form>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="section-checkbox">
+        <h2>Checkboxes</h2>
+        <h6>
+          <a href="http://getbootstrap.com/docs/4.1/components/forms/#checkboxes-and-radios">Bootstrap Link</a>
+        </h6>
+
+        <div class="section-example">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <form>
+
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                  </div>
+
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" checked id="customCheck2">
+                    <label class="custom-control-label" for="customCheck2">Uncheck this custom checkbox</label>
+                  </div>
+
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" disabled id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Give up trying with this disabled custom checkbox</label>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="section-radio">
+        <h2>Radio buttons</h2>
+        <h6>
+          <a href="http://getbootstrap.com/docs/4.1/components/forms/#checkboxes-and-radios">Bootstrap Link</a>
+        </h6>
+
+        <div class="section-example">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <form>
+
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+                    <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                  </div>
+
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+                  </div>
+
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" disabled>
+                    <label class="custom-control-label" for="customRadio3">But you can't toggle this disabled custom radio</label>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -134,7 +214,7 @@
     <footer class="footer">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">RMS + AND Digital</div>
+          <div class="col-12">Created with <img src="https://static.andigital.com/new-logos/ANDigital_LOGO_LONG_RGB_ON_WHITE.png" alt="AND Digital" width="100"></div>
         </div>
       </div>
     </footer>
