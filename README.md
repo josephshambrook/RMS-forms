@@ -4,6 +4,6 @@ This styleguide is intended to provide examples of key components, for use in RM
 
 The `rms.css` file inside `dist/css` contains the compiled Bootstrap CSS + RMS customisations, and needs to be included in projects using these components.
 
-Every component here is compatible with Bootstrap's customisation capabilities, such as sizing and colours. This styleguide does not go through all of the possible examples, as Bootstrap details them way better. To see them all, [view Bootstrap's full documentation](https://getbootstrap.com/).
+Every component here is compatible with Bootstrap's customisation capabilities, such as sizing and colours. This styleguide does not go through all of the possible examples, as Bootstrap details them way better. To see them all, [view Bootstrap's full documentation](https://getbootstrap.com/), or click the Bootstrap link below each component's title.
 
 > Note: Some of the examples are inside containers with a fixed width, to prevent them from spanning unusually wide.

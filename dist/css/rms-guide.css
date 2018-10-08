@@ -11,7 +11,7 @@
 
 @media (min-width: 576px) {
   .guide-layout {
-    grid-template-columns: 4fr 8fr; }
+    grid-template-columns: 3fr 9fr; }
   nav, footer {
     grid-column: 1 / 3; } }
 
