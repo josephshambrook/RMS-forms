@@ -108,10 +108,18 @@
 
                     <div class="form-group">
                       <label for="exampleInput1">
-                        Standard Input
+                        Invalid Input
                       </label>
-                      <input type="text" class="form-control" />
-                      <small id="emailHelp" class="form-text text-muted">This input is invalid.</small>
+                      <input type="text" class="form-control is-invalid" />
+                      <small id="emailHelp" class="invalid-feedback">This piece of text only appears if the above input has the class <code>is-invalid</code>.</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInput1">
+                        Valid Input
+                      </label>
+                      <input type="text" class="form-control is-valid" />
+                      <small id="emailHelp" class="valid-feedback">This piece of text only appears if the above input has the class <code>is-valid</code>.</small>
                     </div>
 
                   </form>

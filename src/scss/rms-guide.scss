@@ -30,7 +30,7 @@ footer {
   padding-top: 0.3125rem;
 }
 
-[id^="section-"] {
+[id^="section-"]:not(:last-child) {
   border-bottom: 1px solid var(--gray);
   margin-bottom: 2rem;
   padding-bottom: 2rem;
