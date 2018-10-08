@@ -4,13 +4,16 @@
  */
 .guide-layout {
   display: grid;
-  grid-template-columns: 4fr 8fr;
+  grid-template-columns: 1fr;
   grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   min-height: 100vh; }
 
-nav {
-  grid-column: 1 / 3; }
+@media (min-width: 576px) {
+  .guide-layout {
+    grid-template-columns: 4fr 8fr; }
+  nav, footer {
+    grid-column: 1 / 3; } }
 
 aside {
   padding: 0.625rem; }
@@ -21,7 +24,6 @@ main {
 footer {
   background-color: var(--gray-dark);
   color: var(--white);
-  grid-column: 1 / 3;
   padding-bottom: 0.625rem;
   padding-top: 0.625rem;
   text-align: center; }
@@ -34,4 +36,4 @@ footer {
 
 .section-example {
   margin-top: 2rem; }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zY3NzL3Jtcy1ndWlkZS5zY3NzIiwicm1zLWd1aWRlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7QUFFSDtFQUNFLGNBQWE7RUFDYiwrQkFBOEI7RUFDOUIsZ0VBQStDO0VBQS9DLGdEQUErQztFQUMvQyxrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxtQkFBa0IsRUFDbkI7O0FBRUQ7RUFDRSxrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxtQ0FBa0M7RUFDbEMsb0JBQW1CO0VBQ25CLG1CQUFrQjtFQUNsQix5QkFBd0I7RUFDeEIsc0JBQXFCO0VBQ3JCLG1CQUFrQixFQUNuQjs7QUNKRDtFRE9FLG9CQUFtQixFQU1wQjtFQ1hDO0lEUUUscUNBQW9DO0lBQ3BDLHFCQUFvQixFQUNyQjs7QUFHSDtFQUNFLGlCQUFnQixFQUNqQiIsImZpbGUiOiJybXMtZ3VpZGUuY3NzIn0= */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zY3NzL3Jtcy1ndWlkZS5zY3NzIiwicm1zLWd1aWRlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7QUFFSDtFQUNFLGNBQWE7RUFDYiwyQkFBMEI7RUFDMUIsZ0VBQStDO0VBQS9DLGdEQUErQztFQUMvQyxrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRTtJQUNFLCtCQUE4QixFQUMvQjtFQUVEO0lBQ0UsbUJBQWtCLEVBQ25CLEVBQUE7O0FBR0g7RUFDRSxrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxtQ0FBa0M7RUFDbEMsb0JBQW1CO0VBQ25CLHlCQUF3QjtFQUN4QixzQkFBcUI7RUFDckIsbUJBQWtCLEVBQ25COztBQ1BEO0VEVUUsb0JBQW1CLEVBTXBCO0VDZEM7SURXRSxxQ0FBb0M7SUFDcEMscUJBQW9CLEVBQ3JCOztBQUdIO0VBQ0UsaUJBQWdCLEVBQ2pCIiwiZmlsZSI6InJtcy1ndWlkZS5jc3MifQ== */
