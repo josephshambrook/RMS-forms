@@ -7,3 +7,55 @@ $theme-colors: (
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+/*
+ * Custom Element
+ * Pagination Steps Component
+ *
+ * - Built on existing Pagination component from Bootstrap
+ */
+
+.pagination-steps {
+  justify-content: space-between;
+  position: relative;
+
+  .page-item {
+    position: relative;
+  }
+
+  .page-item-label {
+    font-size: 9px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translatex(-50%);
+    width: 100%;
+  }
+
+  .page-link {
+    border-radius: 0.2rem !important;
+    min-width: 2.75rem;
+    text-align: center;
+  }
+
+  .page-item-complete .page-link {
+    background-color: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+
+  .page-item-incomplete .page-link {
+    background-color: var(--orange);
+    border-color: var(--orange);
+    color: #fff;
+  }
+
+  &:after {
+    border-bottom: 1px solid $gray-400;
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: -1;
+  }
+}
