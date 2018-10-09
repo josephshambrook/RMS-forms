@@ -42,8 +42,8 @@ main {
 }
 
 footer {
-  background-color: var(--gray-dark);
-  color: var(--white);
+  background-color: var(--gray-dark, #111);
+  color: var(--white, #fff);
   padding-bottom: 0.625rem;
   padding-top: 0.625rem;
   text-align: center;
@@ -53,7 +53,7 @@ footer {
   margin-bottom: 2rem;
 
   &:not(:last-child) {
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray, #666);
     padding-bottom: 2rem;
   }
 }
