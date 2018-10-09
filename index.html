@@ -47,8 +47,6 @@
 
         <p>Every component here is compatible with Bootstrap's customisation capabilities, such as sizing and colours. This styleguide does not go through all of the possible examples, as Bootstrap details them way better. To see them all, <a href="http://getbootstrap.com/docs/4.1">view Bootstrap's full documentation</a>, or click the Bootstrap link below each component's title.</p>
 
-
-
         <p>Note: Some of the examples are inside containers with a fixed width, to prevent them from spanning unusually wide.</p>
       </div>
 
@@ -59,16 +57,17 @@
         </h6>
 
         <div class="section-example">
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-secondary">Secondary</button>
-          <button type="button" class="btn btn-success">Success</button>
-          <button type="button" class="btn btn-danger">Danger</button>
-          <button type="button" class="btn btn-warning">Warning</button>
-          <button type="button" class="btn btn-info">Info</button>
-          <button type="button" class="btn btn-light">Light</button>
-          <button type="button" class="btn btn-dark">Dark</button>
-
-          <button type="button" class="btn btn-link">Link</button>
+          <div>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" class="btn btn-link">Link</button>
+          </div>
         </div>
       </div>
 
@@ -116,25 +115,50 @@
                     <label for="exampleInput1">
                       Standard Input
                     </label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" id="exampleInput1" />
                     <small id="emailHelp" class="form-text text-muted">This is helper text that can be optionally included with form elements.</small>
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInput1">
+                    <label for="exampleInput2">
                       Invalid Input
                     </label>
-                    <input type="text" class="form-control is-invalid" />
+                    <input type="text" class="form-control is-invalid" id="exampleInput2" />
                     <small id="emailHelp" class="invalid-feedback">This piece of text only appears if the above input has the class <code>is-invalid</code>.</small>
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInput1">
+                    <label for="exampleInput3">
                       Valid Input
                     </label>
-                    <input type="text" class="form-control is-valid" />
+                    <input type="text" class="form-control is-valid" id="exampleInput3" />
                     <small id="emailHelp" class="valid-feedback">This piece of text only appears if the above input has the class <code>is-valid</code>.</small>
                   </div>
+
+                  <hr/>
+
+                  <div class="form-group">
+                    <label for="exampleInputDate">
+                      Date input
+                    </label>
+                    <input type="date" class="form-control" id="exampleInputDate" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail">
+                      Email input
+                    </label>
+                    <input type="email" class="form-control" id="exampleInputEmail" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputTel">
+                      Phone number input
+                    </label>
+                    <input type="tel" class="form-control" id="exampleInputTel" required />
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form>
               </div>
@@ -270,9 +294,7 @@
 
         <p>Each step is a link, meaning they could be clicked to go back or forward to that particular step.</p>
 
-        <p></p>
-
-        <p>For the content inside the each step, we would recommend using icons. We've included Font Awesome in this styleguide as an example of icons that could be used.</p>
+        <p>For the content inside the each step, we would recommend using icons. We've included <a href="https://fontawesome.com/">Font Awesome</a> in this styleguide as an example of icons that could be used.</p>
 
         <div class="section-example">
 
