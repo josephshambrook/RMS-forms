@@ -12,6 +12,10 @@ $theme-colors: (
 
 /*
  * Button customisation
+ *
+ * - Raise the height and width of all buttons
+ * - Bolden all buttons
+ * - Add a shadow that appears on hover (to add depth)
  */
 
 .btn {
@@ -25,6 +29,9 @@ $theme-colors: (
 
 /*
  * Forms customisation
+ *
+ * - Raise the height of the inputs to match the height of the buttons
+ * - Bolden all form labels
  */
 
 .form-control {
@@ -35,6 +42,17 @@ $theme-colors: (
 
 label {
   font-weight: 500;
+}
+
+/*
+ * Tables customisation
+ *
+ * - Align all content to be vertically centered
+ */
+
+.table th,
+.table td {
+  vertical-align: middle;
 }
 
 /*
@@ -97,5 +115,26 @@ label {
   }
   500% {
     box-shadow: 0 0 0 0 lighten($color-rms, 50%);
+  }
+}
+
+/*
+ * Card Radio
+ */
+
+.card-radio {
+  .card {
+    cursor: pointer;
+  }
+
+  &> .card-radio-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &> .card-radio-input:checked ~ .card {
+    background-color: $color-rms;
+    color: #fff;
   }
 }
