@@ -2,11 +2,38 @@
  * Customisations of Bootstrap for RMS
  */
 
+$color-rms: #8E3233;
+
 $theme-colors: (
-  "primary": #8E3233
+  "primary": $color-rms
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+/*
+ * Button customisation
+ */
+
+.btn {
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+
+  &:hover {
+    box-shadow: 0px 10px 23px -8px rgba(0,0,0,0.2);
+  }
+}
+
+/*
+ * Forms customisation
+ */
+
+.form-control {
+  height: calc(3.25rem + 2px);
+}
+
+label {
+  font-weight: 500;
+}
 
 /*
  * Custom Element
@@ -23,30 +50,29 @@ $theme-colors: (
     position: relative;
   }
 
-  .page-item-label {
-    font-size: 9px;
-    left: 50%;
-    position: absolute;
-    text-align: center;
-    transform: translatex(-50%);
-    width: 100%;
-  }
-
   .page-link {
     border-radius: 0.2rem !important;
     min-width: 2.75rem;
     text-align: center;
   }
 
+  .page-item.active .page-link {
+    animation: pulse 4s infinite;
+  }
+
+  .page-item.active:hover .page-link {
+    animation: none;
+  }
+
   .page-item-complete .page-link {
-    background-color: var(--green);
-    border-color: var(--green);
+    background-color: $green;
+    border-color: $green;
     color: #fff;
   }
 
   .page-item-incomplete .page-link {
-    background-color: var(--orange);
-    border-color: var(--orange);
+    background-color: $orange;
+    border-color: $orange;
     color: #fff;
   }
 
@@ -57,5 +83,17 @@ $theme-colors: (
     top: 50%;
     width: 100%;
     z-index: -1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 lighten($color-rms, 50%);
+  }
+  70% {
+    box-shadow: 0 0 0 8px lighten($color-rms, 50%);
+  }
+  500% {
+    box-shadow: 0 0 0 0 lighten($color-rms, 50%);
   }
 }
