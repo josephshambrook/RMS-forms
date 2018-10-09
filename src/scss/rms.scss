@@ -28,8 +28,9 @@ $theme-colors: (
  */
 
 .form-control {
-  padding-bottom: 0.4rem;
-  padding-top: 0.4rem;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  height: calc(3rem + 2px);
 }
 
 label {
