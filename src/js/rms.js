@@ -29,12 +29,21 @@
      * Handle modal address submission
      */
 
-    const findAddressModal = $('#find-address');
+    const findAddressModal = $('#js-modal-find-address');
 
     findAddressModal.on('click', '.js-find-address-submit', function() {
       findAddressModal.modal('hide');
-      $('.js-address-details').removeClass('d-none');
+      $('.js-business-details-form').removeClass('d-none');
     });
 
+    /*
+     * Handle modal for custom VAT number
+     */
+
+    const customVatModal = $('#js-modal-custom-vat');
+
+    $('.js-operating-countries').select2({
+      width: '100%'
+    });
   });
 }());
