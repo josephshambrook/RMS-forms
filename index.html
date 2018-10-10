@@ -58,7 +58,7 @@
         </h6>
 
         <div class="section-example">
-          <div>
+          <div class="mb-2">
             <button type="button" class="btn btn-primary">Primary</button>
             <button type="button" class="btn btn-secondary">Secondary</button>
             <button type="button" class="btn btn-success">Success</button>
@@ -68,6 +68,12 @@
             <button type="button" class="btn btn-light">Light</button>
             <button type="button" class="btn btn-dark">Dark</button>
             <button type="button" class="btn btn-link">Link</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary">
+              <i class="fas fa-search mr-1"></i>
+              <span>Search</span>
+            </button>
           </div>
         </div>
       </div>
@@ -255,6 +261,57 @@
         </div>
       </div>
 
+      <div id="section-radio-cards">
+        <h2>Radio cards</h2>
+        <p>Built on <a href="http://getbootstrap.com/docs/4.1/components/card/">Bootstrap's card component</a>, but selectable.</p>
+
+        <div class="section-example">
+          <form>
+            <div class="container">
+              <div class="row">
+
+                <div class="col-4">
+                  <div class="card-radio">
+                    <input type="radio" id="cardRadio1" name="cardRadio" class="card-radio-input" checked>
+                    <label for="cardRadio1" class="card">
+                      <img class="card-img-top" src="https://placehold.it/286x143" alt="Image description">
+                      <div class="card-body">
+                        <p class="card-text">Card Machines</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="card-radio">
+                    <input type="radio" id="cardRadio2" name="cardRadio" class="card-radio-input">
+                    <label for="cardRadio2" class="card">
+                      <img class="card-img-top" src="https://placehold.it/286x143" alt="Image description">
+                      <div class="card-body">
+                        <p class="card-text">Online Purchase</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="card-radio">
+                    <input type="radio" id="cardRadio3" name="cardRadio" class="card-radio-input">
+                    <label for="cardRadio3" class="card">
+                      <img class="card-img-top" src="https://placehold.it/286x143" alt="Image description">
+                      <div class="card-body">
+                        <p class="card-text">Pay By Link</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
       <div id="section-alerts">
         <h2>Alerts</h2>
         <h6>
@@ -390,13 +447,15 @@
           <div class="container">
             <div class="row">
               <div class="col-12">
-                <table class="table table-striped">
+                <table class="table table-striped align-middle">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">First</th>
                       <th scope="col">Last</th>
                       <th scope="col">Application Date</th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -405,18 +464,24 @@
                       <td>Jane</td>
                       <td>Doe</td>
                       <td>20/10/2018</td>
+                      <td><button type="button" class="btn btn-primary">Select</button></td>
+                      <td><button type="button" class="btn btn-secondary">Delete</button></td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>Mark</td>
                       <td>Johnson</td>
                       <td>21/10/2018</td>
+                      <td><button type="button" class="btn btn-primary">Select</button></td>
+                      <td><button type="button" class="btn btn-secondary">Delete</button></td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>John</td>
                       <td>Markson</td>
                       <td>22/10/2018</td>
+                      <td><button type="button" class="btn btn-primary">Select</button></td>
+                      <td><button type="button" class="btn btn-secondary">Delete</button></td>
                     </tr>
                   </tbody>
                 </table>
