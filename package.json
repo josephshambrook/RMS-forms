@@ -9,7 +9,8 @@
     "build-task:minify": "cleancss -o dist/css/rms.min.css dist/css/rms.css",
     "sass:build": "npm-run-all -p build-task:*",
     "sass:watch": "chokidar 'src/scss/**/*.scss' -c 'npm run sass:build'",
-    "sass:dev": "npm-run-all -p sass:*",
+
+    "css:dev": "npm-run-all -p sass:*",
 
     "js:babel": "babel src/js/rms.js -o dist/js/rms-transpiled.js",
     "js:concat:vendor": "concat src/vendor/jquery-*.js src/vendor/bootstrap-*.js src/vendor/popper-*.js src/vendor/select2-*.js -o dist/js/vendor.js",

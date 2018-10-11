@@ -9,7 +9,6 @@ $theme-colors: (
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-// @import "./../vendor/select2-4.0.5.min";
 
 /*
  * Button customisation
@@ -139,3 +138,26 @@ label {
     color: #fff;
   }
 }
+
+/*
+ * Basic re-styling of Select2 rendered boxes
+ * Possible that not all scenarios covered, so may be some problems.
+ */
+
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__arrow,
+.select2-container--default .select2-selection--multiple {
+  height: calc(3.1rem + 2px);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-bottom: 0.675rem;
+  padding-top: 0.675rem;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice,
+.select2-container .select2-search--inline {
+  padding-bottom: 0.4rem;
+  padding-top: 0.4rem;
+}
+
