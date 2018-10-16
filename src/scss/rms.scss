@@ -18,7 +18,7 @@ $theme-colors: (
  * - Add a shadow that appears on hover (to add depth)
  */
 
-.btn {
+ .btn {
   padding: 0.8rem 2rem;
   font-weight: 600;
 
@@ -164,9 +164,12 @@ label {
  */
 
 .select2-container .select2-selection--single,
-.select2-container--default .select2-selection--single .select2-selection__arrow,
 .select2-container--default .select2-selection--multiple {
   height: calc(3.1rem + 2px);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: calc(3rem + 2px);
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -180,3 +183,20 @@ label {
   padding-top: 0.4rem;
 }
 
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+  border-color: $gray-400;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--focus .select2-selection,
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border-color: lighten($color-rms, 25%);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba($color-rms, .25);
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: $color-rms;
+  color: #fff;
+}
