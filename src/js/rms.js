@@ -31,9 +31,29 @@
 
     const findAddressModal = $('#js-modal-find-address');
 
-    findAddressModal.on('click', '.js-find-address-submit', function() {
-      findAddressModal.modal('hide');
+    // findAddressModal.on('click', '.js-find-address-submit', function() {
+    //   findAddressModal.modal('hide');
+    //   $('.js-business-details-form').removeClass('d-none');
+    // });
+
+    const findAddressForm = findAddressModal.find('form');
+
+    findAddressModal.on('submit', 'form', function(evt) {
+      evt.preventDefault();
+
+      // get selected business address option
+      const selectedAddress = findAddressForm.serializeArray().find(field => field.name === 'business-address');
+
+      if (selectedAddress.value === 'manual') {
+        // manual address has been chosen, so we need to show Postcode Lookup
+        $('.js-postcode-lookup').removeClass('d-none');
+      } else {
+        $('.js-postcode-lookup:not(.d-none)').addClass('d-none');
+      }
+
+      // dismiss the modal
       $('.js-business-details-form').removeClass('d-none');
+      findAddressModal.modal('hide');
     });
 
     /*

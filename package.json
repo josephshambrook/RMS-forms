@@ -9,13 +9,14 @@
     "build-task:minify": "cleancss -o dist/css/rms.min.css dist/css/rms.css",
     "sass:build": "npm-run-all -p build-task:*",
     "sass:watch": "chokidar 'src/scss/**/*.scss' -c 'npm run sass:build'",
-
     "css:dev": "npm-run-all -p sass:*",
 
     "js:babel": "babel src/js/rms.js -o dist/js/rms-transpiled.js",
     "js:concat:vendor": "concat src/vendor/jquery-*.js src/vendor/bootstrap-*.js src/vendor/popper-*.js src/vendor/select2-*.js -o dist/js/vendor.js",
     "js:concat": "concat dist/js/vendor.js dist/js/rms-transpiled.js -o dist/js/rms.js",
-    "js:build": "run-s js:babel js:concat:vendor js:concat"
+    "js:build": "run-s js:babel js:concat:vendor js:concat",
+    "js:watch": "onchange 'src/js/**/*.js' -- run-s js:build",
+    "js:dev": "run-s js:build js:watch"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "clean-css-cli": "^4.2.1",
-    "concat": "^1.0.3"
+    "concat": "^1.0.3",
+    "onchange": "^5.0.2"
   }
 }

@@ -88,24 +88,12 @@
 
               <div class="js-business-details-form d-none">
                 <div class="form-group">
-                  <label for="address-country">Country:</label>
-                  <select class="form-control" id="address-country" name="address-country">
-                    <option disabled selected value="">
-                      Select country
-                    </option>
-                    <option value="united-kingdom">
-                      United Kingdom
-                    </option>
-                  </select>
-                </div>
-
-                <div class="form-group">
                     <label for="address-postcode">Postcode:</label>
                     <input class="form-control" id="address-postcode" name="address-postcode" placeholder="e.g. W4 1NX" type="text">
                 </div>
 
                 <div class="form-group">
-                  <button class="btn btn-primary" type="button">Lookup Postcode</button>
+                  <button class="btn btn-primary js-postcode-lookup" type="button">Lookup Postcode</button>
                 </div>
 
                 <div class="form-group">
@@ -120,13 +108,14 @@
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
-                      <label for="address-city">City:</label> <input class="form-control" id="address-city" name="address-city" type="text">
+                      <label for="address-city">City:</label>
+                      <input class="form-control" id="address-city" name="address-city" type="text">
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-group">
-                      <label for="address-county">County:</label> <input class="form-control" id="address-county" name="address-county"
-                        type="text">
+                      <label for="address-country">Country</label>
+                      <input type="text" readonly class="form-control-plaintext" id="address-country" value="United Kingdom">
                     </div>
                   </div>
                 </div>
@@ -137,15 +126,18 @@
                 </div>
               <hr>
               <div class="form-group">
-                <label for="business-date-start">Business Start Date:</label> <input class="form-control" id="business-date-start"
+                <label for="business-date-start">Business Start Date:</label>
+                <input class="form-control" id="business-date-start"
                   name="business-date-start" type="date">
               </div>
               <div class="form-group">
-                <label for="business-date-ownership">Ownership Date:</label> <input class="form-control" id="business-date-ownership"
+                <label for="business-date-ownership">Ownership Date:</label>
+                <input class="form-control" id="business-date-ownership"
                   name="business-date-ownership" type="date">
               </div>
               <div class="form-group">
-                <label for="business-vat">VAT Number:</label> <input class="form-control" id="business-vat" name="business-vat"
+                <label for="business-vat">VAT Number:</label>
+                <input class="form-control" id="business-vat" name="business-vat"
                   type="text"> <small class="form-text text-muted"><a data-target="#js-modal-custom-vat" data-toggle="modal"
                     href="#">I do not have a VAT number</a></small>
               </div>
@@ -175,19 +167,23 @@
               </div>
               <hr>
               <div class="form-group">
-                <label for="business-contact-website">Website:</label> <input class="form-control" id="business-contact-website"
+                <label for="business-contact-website">Website:</label>
+                <input class="form-control" id="business-contact-website"
                   name="business-contact-website" placeholder="e.g. https://www.example.com" type="text">
               </div>
               <div class="form-group">
-                <label for="business-contact-phone">Contact Phone Number:</label> <input class="form-control" id="business-contact-phone"
+                <label for="business-contact-phone">Contact Phone Number:</label>
+                <input class="form-control" id="business-contact-phone"
                   name="business-contact-phone" placeholder="e.g. 020 8907 0000" type="tel">
               </div>
               <div class="form-group">
-                <label for="business-contact-mobile">Contact Mobile Number:</label> <input class="form-control" id="business-contact-mobile"
+                <label for="business-contact-mobile">Contact Mobile Number:</label>
+                <input class="form-control" id="business-contact-mobile"
                   name="business-contact-mobile" placeholder="e.g. 07989 123 123" type="tel">
               </div>
               <div class="form-group">
-                <label for="business-contact-email">Email:</label> <input class="form-control" id="business-contact-email"
+                <label for="business-contact-email">Email:</label>
+                <input class="form-control" id="business-contact-email"
                   name="business-contact-email" placeholder="e.g. email@gmail.com" type="email">
               </div>
               <hr>
@@ -216,41 +212,43 @@
   <div aria-hidden="true" aria-labelledby="find-address-label" class="modal fade" id="js-modal-find-address" role="dialog"
     tabindex="-1">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Addresses Found</h5><button aria-label="Close" class="close"
-            data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+      <form>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Addresses Found</h5><button aria-label="Close" class="close"
+              data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="custom-control custom-radio">
+                <input checked class="custom-control-input" id="business-address-1" name="business-address" type="radio"
+                  value="address-1"> <label class="custom-control-label" for="business-address-1">Address 1</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="business-address-2" name="business-address" type="radio" value="address-2">
+                <label class="custom-control-label" for="business-address-2">Address 2</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="business-address-3" name="business-address" type="radio" value="address-3">
+                <label class="custom-control-label" for="business-address-3">Address 3</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="business-address-4" name="business-address" type="radio" value="address-4">
+                <label class="custom-control-label" for="business-address-4">Address 4</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="business-address-manual" name="business-address" type="radio"
+                  value="manual"> <label class="custom-control-label" for="business-address-manual">Enter address
+                  manually</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+            <button class="btn btn-primary js-find-address-submit" type="submit">Select</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <form>
-            <div class="custom-control custom-radio">
-              <input checked class="custom-control-input" id="business-address-1" name="business-address" type="radio"
-                value="address-1"> <label class="custom-control-label" for="business-address-1">Address 1</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="business-address-2" name="business-address" type="radio" value="address-2">
-              <label class="custom-control-label" for="business-address-2">Address 2</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="business-address-3" name="business-address" type="radio" value="address-3">
-              <label class="custom-control-label" for="business-address-3">Address 3</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="business-address-4" name="business-address" type="radio" value="address-4">
-              <label class="custom-control-label" for="business-address-4">Address 4</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="business-address-manual" name="business-address" type="radio"
-                value="manual"> <label class="custom-control-label" for="business-address-manual">Enter address
-                manually</label>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button> <button class="btn btn-primary js-find-address-submit"
-            type="button">Select</button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 
@@ -258,12 +256,12 @@
     tabindex="-1">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Select a category and type your number</h5><button aria-label="Close"
-            class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-          <form>
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Select a category and type your number</h5><button aria-label="Close"
+              class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
             <div class="custom-control custom-radio">
               <input checked class="custom-control-input" id="custom-vat-limited" name="custom-vat-option" type="radio"
                 value="vat-limited"> <label class="custom-control-label" for="custom-vat-limited">Limited</label>
@@ -282,15 +280,16 @@
             </div>
             <hr>
             <div class="form-group">
-              <label for="custom-vat-number">Number:</label> <input class="form-control" id="custom-vat-number" name="custom-vat-number"
+              <label for="custom-vat-number">Number:</label>
+              <input class="form-control" id="custom-vat-number" name="custom-vat-number"
                 type="text">
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-          <button class="btn btn-primary" data-dismiss="modal" type="button">Add Number</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+            <button class="btn btn-primary" data-dismiss="modal" type="button">Add Number</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
