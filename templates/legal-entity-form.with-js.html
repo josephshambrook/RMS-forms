@@ -100,18 +100,18 @@
 
                 <div class="form-group">
                   <label for="business-address-line-1">Address:</label>
-                  <input class="form-control" id="business-address-line-1" name="business-address-line-1" type="text">
+                  <input class="form-control" id="business-address-line-1" name="business-address-line-1" type="text" placeholder="e.g. Floor 2">
                 </div>
 
                 <div class="form-group">
-                  <input class="form-control" id="business-address-line-2" name="business-address-line-2" type="text">
+                  <input class="form-control" id="business-address-line-2" name="business-address-line-2" type="text" placeholder="e.g. 100 London Street">
                 </div>
 
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
                       <label for="business-address-city">City:</label>
-                      <input class="form-control" id="business-address-city" name="business-address-city" type="text">
+                      <input class="form-control" id="business-address-city" name="business-address-city" type="text"  placeholder="e.g. London">
                     </div>
                   </div>
                   <div class="col-6">
@@ -146,18 +146,18 @@
 
                   <div class="form-group">
                     <label for="merchant-address-line-1">Address:</label>
-                    <input class="form-control" id="merchant-address-line-1" name="merchant-address-line-1" type="text">
+                    <input class="form-control" id="merchant-address-line-1" name="merchant-address-line-1" type="text" placeholder="e.g. Floor 2">
                   </div>
 
                   <div class="form-group">
-                    <input class="form-control" id="merchant-address-line-2" name="merchant-address-line-2" type="text">
+                    <input class="form-control" id="merchant-address-line-2" name="merchant-address-line-2" type="text" placeholder="e.g. 100 London Street">
                   </div>
 
                   <div class="row">
                     <div class="col-6">
                       <div class="form-group">
                         <label for="merchant-address-city">City:</label>
-                        <input class="form-control" id="merchant-address-city" name="merchant-address-city" type="text">
+                        <input class="form-control" id="merchant-address-city" name="merchant-address-city" type="text" placeholder="London">
                       </div>
                     </div>
                     <div class="col-6">
@@ -173,7 +173,7 @@
 
                 <div class="form-group">
                   <label for="business-date-start">Business Start Date:</label>
-                  <input class="form-control" id="business-date-start" name="business-date-start" type="date">
+                  <input class="form-control js-business-date-start" id="business-date-start" name="business-date-start" type="date">
                 </div>
 
                 <div class="form-group">
@@ -182,8 +182,25 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="business-turnover">Business Turnover p/a:</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">£</span>
+                    </div>
+                    <input type="number" class="form-control js-business-turnover" aria-label="Amount" placeholder="e.g. 10000">
+                  </div>
+                </div>
+
+                <div class="form-group js-vat-group d-none">
+                  <div class="alert alert-info" role="alert">
+                    As the business you filled in either started at least 6 months ago, or the business turnover is at least £85,000 p/a, you will need to provide a VAT number for this business as well.
+                  </div>
+
                   <label for="business-vat">VAT Number:</label>
-                  <input class="form-control" id="business-vat" name="business-vat" type="text"> <small class="form-text text-muted"><a data-target="#js-modal-custom-vat" data-toggle="modal" href="#">I do not have a VAT number</a></small>
+                  <input class="form-control" id="business-vat" name="business-vat" type="text" placeholder="e.g. GB 102102102">
+                  <small class="form-text text-muted">
+                    <a data-target="#js-modal-custom-vat" data-toggle="modal" href="#">I do not have a VAT number</a>
+                  </small>
                 </div>
 
                 <div class="form-group">

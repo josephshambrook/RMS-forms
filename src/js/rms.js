@@ -1,6 +1,20 @@
 (function() {
-  $(function() {
 
+  /*
+   * Helper functions
+   */
+
+  const padNum = num => num < 10 && num >= 0 ? `0${num}` : num;
+
+  const monthDiff = (from, to) => {
+    let months = to.getMonth() - from.getMonth() + (12 * (to.getFullYear() - from.getFullYear()));
+    if (to.getDate() < from.getDate()){
+        months--;
+    }
+    return months;
+  }
+
+  $(function() {
     /*
      * Handle Legal Entity Dropdown
      */
@@ -64,6 +78,44 @@
       }
     });
 
+    /*
+     * Handle showing VAT number field and link if BTO and Start Date meet requirement
+     */
+
+    const businessStartDateField = $('.js-business-date-start');
+    const businessTurnoverField = $('.js-business-turnover');
+    const vatGroup = $('.js-vat-group');
+    const jsDate = new Date();
+    const todayDate = `${jsDate.getFullYear()}-${padNum(jsDate.getMonth())}-${padNum(jsDate.getDate())}`;
+
+    let businessStartMonthsDifference = 0;
+    let businessTurnover = 0;
+
+    // set a dynamic max date for business start date
+    businessStartDateField.attr('max', todayDate);
+
+    const checkBusinessVatRequirement = (startMonthsDifference = 0, turnover = 0) => {
+      if (startMonthsDifference <= -6 || turnover >= 85000) {
+        vatGroup.removeClass('d-none');
+      } else {
+        vatGroup.addClass('d-none');
+      }
+    }
+
+    // when the date changes, check if it's at least 6 months prior to today
+    businessStartDateField.on('change', function () {
+      const val = this.value;
+      const jsStartDate = new Date(val);
+      businessStartMonthsDifference = monthDiff(jsDate, jsStartDate);
+
+      checkBusinessVatRequirement(businessStartMonthsDifference, businessTurnover);
+    });
+
+    // when the turnover field changes, check if it's enough to show vat field
+    businessTurnoverField.on('keyup', function () {
+      businessTurnover = this.value;
+      checkBusinessVatRequirement(businessStartMonthsDifference, businessTurnover);
+    });
 
     /*
      * Handle modal for custom VAT number
@@ -84,6 +136,8 @@
      */
 
     $('.js-operating-countries').select2({
+      // there's a weird bug where the select box is miniscule on initialisation
+      // which this line fixes
       width: '100%'
     });
   });
