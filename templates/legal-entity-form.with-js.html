@@ -87,9 +87,11 @@
               <hr>
 
               <div class="js-business-details-form d-none">
+                <h5>Business Address</h5>
+
                 <div class="form-group">
-                    <label for="address-postcode">Postcode:</label>
-                    <input class="form-control" id="address-postcode" name="address-postcode" placeholder="e.g. W4 1NX" type="text">
+                  <label for="business-address-postcode">Postcode:</label>
+                  <input class="form-control" id="business-address-postcode" name="business-address-postcode" placeholder="e.g. W4 1NX" type="text">
                 </div>
 
                 <div class="form-group">
@@ -97,99 +99,149 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="address-line-1">Address:</label>
-                  <input class="form-control" id="address-line-1" name="address-line-1" type="text">
+                  <label for="business-address-line-1">Address:</label>
+                  <input class="form-control" id="business-address-line-1" name="business-address-line-1" type="text">
                 </div>
 
                 <div class="form-group">
-                  <input class="form-control" id="address-line-2" name="address-line-2" type="text">
+                  <input class="form-control" id="business-address-line-2" name="business-address-line-2" type="text">
                 </div>
 
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
-                      <label for="address-city">City:</label>
-                      <input class="form-control" id="address-city" name="address-city" type="text">
+                      <label for="business-address-city">City:</label>
+                      <input class="form-control" id="business-address-city" name="business-address-city" type="text">
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-group">
-                      <label for="address-country">Country</label>
-                      <input type="text" readonly class="form-control-plaintext" id="address-country" value="United Kingdom">
+                      <label for="business-address-country">Country</label>
+                      <input type="text" readonly class="form-control-plaintext" id="business-address-country" value="United Kingdom">
                     </div>
                   </div>
                 </div>
-                <div class="custom-control custom-checkbox">
-                  <input checked class="custom-control-input" id="address-merchant-opt-in" name="address-merchant-opt-in"
-                    type="checkbox"> <label class="custom-control-label" for="address-merchant-opt-in">Send my merchant
-                    state here</label>
+
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input checked class="custom-control-input js-address-merchant-opt" id="business-address-merchant-opt-in" name="business-address-merchant-opt-in"
+                      type="checkbox">
+                    <label class="custom-control-label" for="business-address-merchant-opt-in">Send my merchant statement here</label>
+                  </div>
                 </div>
-              <hr>
-              <div class="form-group">
-                <label for="business-date-start">Business Start Date:</label>
-                <input class="form-control" id="business-date-start"
-                  name="business-date-start" type="date">
+
+                <div class="js-merchant-address-form d-none">
+                  <hr>
+
+                  <h5>Merchant Address</h5>
+
+                  <div class="form-group">
+                    <label for="merchant-address-postcode">Postcode:</label>
+                    <input class="form-control" id="merchant-address-postcode" name="merchant-address-postcode" placeholder="e.g. W4 1NX" type="text">
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn btn-primary" type="button">Lookup Postcode</button>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="merchant-address-line-1">Address:</label>
+                    <input class="form-control" id="merchant-address-line-1" name="merchant-address-line-1" type="text">
+                  </div>
+
+                  <div class="form-group">
+                    <input class="form-control" id="merchant-address-line-2" name="merchant-address-line-2" type="text">
+                  </div>
+
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="merchant-address-city">City:</label>
+                        <input class="form-control" id="merchant-address-city" name="merchant-address-city" type="text">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="merchant-address-country">Country</label>
+                        <input type="text" readonly class="form-control-plaintext" id="merchant-address-country" value="United Kingdom">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                  <label for="business-date-start">Business Start Date:</label>
+                  <input class="form-control" id="business-date-start" name="business-date-start" type="date">
+                </div>
+
+                <div class="form-group">
+                  <label for="business-date-ownership">Ownership Date:</label>
+                  <input class="form-control" id="business-date-ownership" name="business-date-ownership" type="date">
+                </div>
+
+                <div class="form-group">
+                  <label for="business-vat">VAT Number:</label>
+                  <input class="form-control" id="business-vat" name="business-vat" type="text"> <small class="form-text text-muted"><a data-target="#js-modal-custom-vat" data-toggle="modal" href="#">I do not have a VAT number</a></small>
+                </div>
+
+                <div class="form-group">
+                  <label for="business-operating-countries">Countries which the business operates in:</label>
+                  <select class="js-operating-countries" id="business-operating-countries" multiple="multiple" name="countries[]">
+                    <option value="DK">
+                      Denmark
+                    </option>
+                    <option value="IE">
+                      Ireland
+                    </option>
+                    <option value="IT">
+                      Italy
+                    </option>
+                    <option value="JP">
+                      Japan
+                    </option>
+                    <option value="SE">
+                      Sweden
+                    </option>
+                    <option value="UK">
+                      United Kingdom
+                    </option>
+                  </select>
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                  <label for="business-contact-website">Website:</label>
+                  <input class="form-control" id="business-contact-website"
+                    name="business-contact-website" placeholder="e.g. https://www.example.com" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="business-contact-phone">Contact Phone Number:</label>
+                  <input class="form-control" id="business-contact-phone"
+                    name="business-contact-phone" placeholder="e.g. 020 8907 0000" type="tel">
+                </div>
+
+                <div class="form-group">
+                  <label for="business-contact-mobile">Contact Mobile Number:</label>
+                  <input class="form-control" id="business-contact-mobile"
+                    name="business-contact-mobile" placeholder="e.g. 07989 123 123" type="tel">
+                </div>
+
+                <div class="form-group">
+                  <label for="business-contact-email">Email:</label>
+                  <input class="form-control" id="business-contact-email"
+                    name="business-contact-email" placeholder="e.g. email@gmail.com" type="email">
+                </div>
+
+                <hr>
+
+                <a class="btn btn-primary btn-block" href="#">Next</a>
+
+                <hr>
               </div>
-              <div class="form-group">
-                <label for="business-date-ownership">Ownership Date:</label>
-                <input class="form-control" id="business-date-ownership"
-                  name="business-date-ownership" type="date">
-              </div>
-              <div class="form-group">
-                <label for="business-vat">VAT Number:</label>
-                <input class="form-control" id="business-vat" name="business-vat"
-                  type="text"> <small class="form-text text-muted"><a data-target="#js-modal-custom-vat" data-toggle="modal"
-                    href="#">I do not have a VAT number</a></small>
-              </div>
-              <div class="form-group">
-                <label for="business-operating-countries">Countries which the business operates in:</label>
-                <select
-                  class="js-operating-countries" id="business-operating-countries" multiple="multiple" name="countries[]">
-                  <option value="DK">
-                    Denmark
-                  </option>
-                  <option value="IE">
-                    Ireland
-                  </option>
-                  <option value="IT">
-                    Italy
-                  </option>
-                  <option value="JP">
-                    Japan
-                  </option>
-                  <option value="SE">
-                    Sweden
-                  </option>
-                  <option value="UK">
-                    United Kingdom
-                  </option>
-                </select>
-              </div>
-              <hr>
-              <div class="form-group">
-                <label for="business-contact-website">Website:</label>
-                <input class="form-control" id="business-contact-website"
-                  name="business-contact-website" placeholder="e.g. https://www.example.com" type="text">
-              </div>
-              <div class="form-group">
-                <label for="business-contact-phone">Contact Phone Number:</label>
-                <input class="form-control" id="business-contact-phone"
-                  name="business-contact-phone" placeholder="e.g. 020 8907 0000" type="tel">
-              </div>
-              <div class="form-group">
-                <label for="business-contact-mobile">Contact Mobile Number:</label>
-                <input class="form-control" id="business-contact-mobile"
-                  name="business-contact-mobile" placeholder="e.g. 07989 123 123" type="tel">
-              </div>
-              <div class="form-group">
-                <label for="business-contact-email">Email:</label>
-                <input class="form-control" id="business-contact-email"
-                  name="business-contact-email" placeholder="e.g. email@gmail.com" type="email">
-              </div>
-              <hr>
-              <a class="btn btn-primary btn-block" href="#">Next</a>
-              <hr>
-            </div>
             </form>
 
             <form class="js-legal-entity-form d-none" data-entity-type="registered-uk">
@@ -258,33 +310,36 @@
       <div class="modal-content">
         <form>
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Select a category and type your number</h5><button aria-label="Close"
-              class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+            <h5 class="modal-title" id="exampleModalLabel">Select a category and type your number</h5>
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
+
           <div class="modal-body">
-            <div class="custom-control custom-radio">
-              <input checked class="custom-control-input" id="custom-vat-limited" name="custom-vat-option" type="radio"
-                value="vat-limited"> <label class="custom-control-label" for="custom-vat-limited">Limited</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="custom-vat-llp" name="custom-vat-option" type="radio" value="vat-llp">
-              <label class="custom-control-label" for="custom-vat-llp">Limited liability partnership</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="custom-vat-charity" name="custom-vat-option" type="radio" value="vat-charity">
-              <label class="custom-control-label" for="custom-vat-charity">Charity</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="custom-vat-trust" name="custom-vat-option" type="radio" value="vat-trust">
-              <label class="custom-control-label" for="custom-vat-trust">Trust</label>
-            </div>
-            <hr>
             <div class="form-group">
-              <label for="custom-vat-number">Number:</label>
-              <input class="form-control" id="custom-vat-number" name="custom-vat-number"
-                type="text">
+              <label for="corporate-tax-id">Corporate Tax ID:</label>
+              <input class="form-control" id="corporate-tax-id" name="corporate-tax-id" type="text">
+            </div>
+
+            <div class="form-group">
+              <label for="income-tax-number">Income Tax Number:</label>
+              <input class="form-control" id="income-tax-number" name="income-tax-number" type="text">
+            </div>
+
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input js-business-charity-option" id="business-charity-option" type="checkbox">
+                <label class="custom-control-label" for="business-charity-option">This business is a charity</label>
+              </div>
+            </div>
+
+            <div class="form-group js-charity-number-group d-none">
+              <label for="charity-number">Charity Number:</label>
+              <input class="form-control" id="charity-number" name="charity-number" type="text">
             </div>
           </div>
+
           <div class="modal-footer">
             <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
             <button class="btn btn-primary" data-dismiss="modal" type="button">Add Number</button>

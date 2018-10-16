@@ -10,7 +10,7 @@
 
     $('#legal-entities-picker').on('change', function() {
       // get the value of the option
-      const val = $(this).val();
+      const val = this.value
 
       // get the form related to the chosen option
       const form = forms.filter(`[data-entity-type="${val}"]`);
@@ -31,17 +31,11 @@
 
     const findAddressModal = $('#js-modal-find-address');
 
-    // findAddressModal.on('click', '.js-find-address-submit', function() {
-    //   findAddressModal.modal('hide');
-    //   $('.js-business-details-form').removeClass('d-none');
-    // });
-
-    const findAddressForm = findAddressModal.find('form');
-
     findAddressModal.on('submit', 'form', function(evt) {
       evt.preventDefault();
 
       // get selected business address option
+      const findAddressForm = findAddressModal.find('form');
       const selectedAddress = findAddressForm.serializeArray().find(field => field.name === 'business-address');
 
       if (selectedAddress.value === 'manual') {
@@ -57,10 +51,33 @@
     });
 
     /*
+     * Handle showing additional form for when merchant option unselected
+     */
+
+    const merchantAddressForm = $('.js-merchant-address-form');
+
+    $('.js-address-merchant-opt').on('change', function() {
+      if (this.checked) {
+        merchantAddressForm.addClass('d-none');
+      } else {
+        merchantAddressForm.removeClass('d-none');
+      }
+    });
+
+
+    /*
      * Handle modal for custom VAT number
      */
 
-    const customVatModal = $('#js-modal-custom-vat');
+    const charityNumberGroup = $('.js-charity-number-group')
+
+    $('#js-modal-custom-vat').on('change', '.js-business-charity-option', function() {
+      if (this.checked) {
+        charityNumberGroup.removeClass('d-none');
+      } else {
+        charityNumberGroup.addClass('d-none');
+      }
+    });
 
     /*
      * Initialize select2 plugin for operating countries tag picker
