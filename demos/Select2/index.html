@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Select2 Demos</title>
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+  rel="stylesheet">
+  <link href="./../../src/vendor/select2-4.0.5.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="./../../dist/css/rms.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-8">
+
+        <h1>Select2 Demos</h1>
+        <p>This is to demo features of the select2 plugin that is recommended to be used, as well as being for testing of custom styles.</p>
+
+        <div class="form-group">
+          <h4>Single</h4>
+
+          <label for="business-operating-countries">Countries which the business operates in:</label>
+          <select class="js-operating-countries" id="business-operating-countries" name="country">
+            <option value="DK">
+              Denmark
+            </option>
+            <option value="IE">
+              Ireland
+            </option>
+            <option value="IT">
+              Italy
+            </option>
+            <option value="JP">
+              Japan
+            </option>
+            <option value="SE">
+              Sweden
+            </option>
+            <option value="UK">
+              United Kingdom
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <h4>Multiple (chips)</h4>
+
+          <label for="business-operating-countries">Countries which the business operates in:</label>
+          <select class="js-operating-countries" id="business-operating-countries" multiple="multiple" name="countries[]">
+            <option value="DK">
+              Denmark
+            </option>
+            <option value="IE">
+              Ireland
+            </option>
+            <option value="IT">
+              Italy
+            </option>
+            <option value="JP">
+              Japan
+            </option>
+            <option value="SE">
+              Sweden
+            </option>
+            <option value="UK">
+              United Kingdom
+            </option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./../../dist/js/rms.js"></script>
+</body>
+</html>

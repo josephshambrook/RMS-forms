@@ -4,9 +4,13 @@
   /*
    * Helper functions
    */
+  // pads the number with a 0 if it's a single digit
+  // e.g. 1 => "01", 9 => "09", 10 => "10"
   var padNum = function padNum(num) {
     return num < 10 && num >= 0 ? "0".concat(num) : num;
-  };
+  }; // returns the number of months between two dates
+  // e.g. from April to October => 6
+
 
   var monthDiff = function monthDiff(from, to) {
     var months = to.getMonth() - from.getMonth() + 12 * (to.getFullYear() - from.getFullYear());
@@ -77,11 +81,11 @@
      * Handle showing VAT number field and link if BTO and Start Date meet requirement
      */
 
+    var jsDate = new Date();
+    var todayDate = "".concat(jsDate.getFullYear(), "-").concat(padNum(jsDate.getMonth()), "-").concat(padNum(jsDate.getDate()));
     var businessStartDateField = $('.js-business-date-start');
     var businessTurnoverField = $('.js-business-turnover');
     var vatGroup = $('.js-vat-group');
-    var jsDate = new Date();
-    var todayDate = "".concat(jsDate.getFullYear(), "-").concat(padNum(jsDate.getMonth()), "-").concat(padNum(jsDate.getDate()));
     var businessStartMonthsDifference = 0;
     var businessTurnover = 0; // set a dynamic max date for business start date
 
@@ -99,14 +103,14 @@
     }; // when the date changes, check if it's at least 6 months prior to today
 
 
-    businessStartDateField.on('change', function () {
+    businessStartDateField.on('input', function () {
       var val = this.value;
       var jsStartDate = new Date(val);
       businessStartMonthsDifference = monthDiff(jsStartDate, jsDate);
       checkBusinessVatRequirement(businessStartMonthsDifference, businessTurnover);
     }); // when the turnover field changes, check if it's enough to show vat field
 
-    businessTurnoverField.on('keyup', function () {
+    businessTurnoverField.on('input', function () {
       businessTurnover = this.value;
       checkBusinessVatRequirement(businessStartMonthsDifference, businessTurnover);
     });
