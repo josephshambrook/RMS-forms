@@ -91,7 +91,7 @@
       var startMonthsDifference = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var turnover = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
-      if (startMonthsDifference <= -6 || turnover >= 85000) {
+      if (startMonthsDifference >= 6 || turnover >= 85000) {
         vatGroup.removeClass('d-none');
       } else {
         vatGroup.addClass('d-none');
@@ -102,7 +102,7 @@
     businessStartDateField.on('change', function () {
       var val = this.value;
       var jsStartDate = new Date(val);
-      businessStartMonthsDifference = monthDiff(jsDate, jsStartDate);
+      businessStartMonthsDifference = monthDiff(jsStartDate, jsDate);
       checkBusinessVatRequirement(businessStartMonthsDifference, businessTurnover);
     }); // when the turnover field changes, check if it's enough to show vat field
 

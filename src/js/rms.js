@@ -95,7 +95,7 @@
     businessStartDateField.attr('max', todayDate);
 
     const checkBusinessVatRequirement = (startMonthsDifference = 0, turnover = 0) => {
-      if (startMonthsDifference <= -6 || turnover >= 85000) {
+      if (startMonthsDifference >= 6 || turnover >= 85000) {
         vatGroup.removeClass('d-none');
       } else {
         vatGroup.addClass('d-none');
@@ -106,7 +106,7 @@
     businessStartDateField.on('change', function () {
       const val = this.value;
       const jsStartDate = new Date(val);
-      businessStartMonthsDifference = monthDiff(jsDate, jsStartDate);
+      businessStartMonthsDifference = monthDiff(jsStartDate, jsDate);
 
       checkBusinessVatRequirement(businessStartMonthsDifference, businessTurnover);
     });
