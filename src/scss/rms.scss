@@ -77,9 +77,12 @@ label {
  * Sticky sidebar nav
  */
 
-.nav-sidebar-sticky {
-  position: sticky;
-  top: calc(1rem + 66px);
+ @supports (position: sticky) {
+  .nav-sidebar-sticky {
+    // this has so-so browser support, but it falls back gracefully on older browsers
+    position: sticky;
+    top: calc(1rem + 66px);
+  }
 }
 
 /*
