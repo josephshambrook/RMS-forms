@@ -20,6 +20,14 @@
 
   $(function() {
     /*
+     * Set all date inputs with a custom class to have a max date of today
+     */
+
+    const jsDate = new Date();
+    const todayDate = `${jsDate.getFullYear()}-${padNum(jsDate.getMonth())}-${padNum(jsDate.getDate())}`;
+    $('input[type="date"].js-max-date-today').attr('max', todayDate);
+
+    /*
      * Handle Legal Entity Dropdown
      */
 
@@ -85,9 +93,6 @@
     /*
      * Handle showing VAT number field and link if BTO and Start Date meet requirement
      */
-
-    const jsDate = new Date();
-    const todayDate = `${jsDate.getFullYear()}-${padNum(jsDate.getMonth())}-${padNum(jsDate.getDate())}`;
 
     const businessStartDateField = $('.js-business-date-start');
     const businessTurnoverField = $('.js-business-turnover');

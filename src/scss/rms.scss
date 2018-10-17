@@ -74,6 +74,15 @@ label {
 }
 
 /*
+ * Sticky sidebar nav
+ */
+
+.nav-sidebar-sticky {
+  position: sticky;
+  top: calc(1rem + 66px);
+}
+
+/*
  * Tables customisation
  *
  * - Align all content to be vertically centered
@@ -93,24 +102,34 @@ label {
 
 .pagination-steps {
   justify-content: space-between;
+  margin-bottom: 2rem;
   position: relative;
 
-  &.has-labels {
-    margin-bottom: calc(1rem + 30px);
+  &.has-titles {
+    margin-top: calc(1rem + 30px);
   }
 
   .page-item {
     position: relative;
   }
 
-  .page-item-label {
-    font-size: 9px;
+  .page-item-title {
+    color: $color-rms;
+    font-size: 10px;
+    font-weight: 500;
     left: 50%;
     position: absolute;
     text-align: center;
-    transform: translatex(-50%);
+    transform: translatey(-105%) translatex(-50%);
     width: 100%;
     z-index: 2;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    .page-item-title {
+      font-size: 12px;
+      width: 150%;
+    }
   }
 
   .page-link {
@@ -223,4 +242,12 @@ label {
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: $color-rms;
   color: #fff;
+}
+
+/*
+ * Utility classes
+ */
+
+.flex-grow-1 {
+  flex-grow: 1;
 }

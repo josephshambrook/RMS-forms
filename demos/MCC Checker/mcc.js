@@ -23,7 +23,7 @@ const risks = [
     "level": 2
   },
   {
-    "colorClass": "error",
+    "colorClass": "danger",
     "description": "Prohibited",
     "level": 3
   }
@@ -52,6 +52,6 @@ $(function() {
     templateIcon.text(risk.colorClass);
 
     // bg-success
-    
+
   });
 });

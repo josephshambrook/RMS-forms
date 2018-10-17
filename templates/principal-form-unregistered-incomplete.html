@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <title>RMS - Legal Entity Form example</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    rel="stylesheet">
+  <link href="./../src/vendor/select2-4.0.5.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="./../dist/css/rms.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="navbar-brand"><img alt="Retail Merchant Services" src="https://www.retailmerchantservices.co.uk/media/2015/rms-logo-svg.svg"
+        width="120"></div>
+  </nav>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-3">
+        Sidebar
+      </div>
+
+      <div class="col-12 col-md-9">
+        <h1 class="mt-1 mb-3">Principal Unregistered</h1>
+
+        <div class="row">
+          <div class="col-12 col-lg-8 pb-3">
+            <form>
+
+              <section class="personal-details">
+                <h4>Personal Details</h4>
+
+                <div class="form-group">
+                  <label for="personal-first-name">First Name</label>
+                  <input type="text" class="form-control" id="personal-first-name" name="personal-first-name">
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-middle-name">Middle Name</label>
+                  <input type="text" class="form-control" id="personal-middle-name" name="personal-middle-name">
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-last-name">Last Name</label>
+                  <input type="text" class="form-control" id="personal-last-name" name="personal-last-name">
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-dob">Date of Birth</label>
+                  <input type="date" class="form-control js-max-date-today" id="personal-dob" name="personal-dob">
+                </div>
+              </section>
+
+              <hr>
+
+              <section class="address-details">
+                <h4>Address Details</h4>
+
+                <div class="form-group">
+                  <label for="personal-address-postcode">Postcode:</label>
+                  <input class="form-control" id="personal-address-postcode" name="personal-address-postcode" placeholder="e.g. W4 1NX" type="text">
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary js-postcode-lookup" type="button">Lookup Postcode</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-address-line-1">Address:</label>
+                  <input class="form-control" id="personal-address-line-1" name="personal-address-line-1" type="text" placeholder="e.g. Flat 1">
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control" id="personal-address-line-2" name="personal-address-line-2" type="text" placeholder="e.g. 100 London Street">
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="personal-address-city">City:</label>
+                      <input class="form-control" id="personal-address-city" name="personal-address-city" type="text"  placeholder="e.g. London">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="personal-address-country">Country</label>
+                      <input type="text" readonly class="form-control-plaintext" id="personal-address-country" value="United Kingdom">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input checked class="custom-control-input js-address-min-years" id="personal-address-min-years-check" name="personal-address-min-years-check"
+                      type="checkbox">
+                    <label class="custom-control-label" for="personal-address-min-years-check">Have you lived at this address for at least 2 years?</label>
+                  </div>
+                </div>
+
+                <div class="alert alert-info">
+                  As you haven't lived at this address for at least two years, please also fill in your previous address.
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-previous-address-postcode">Postcode:</label>
+                  <input class="form-control" id="personal-previous-address-postcode" name="personal-previous-address-postcode" placeholder="e.g. W4 1NX" type="text">
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary js-postcode-lookup" type="button">Lookup Postcode</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-previous-address-line-1">Address:</label>
+                  <input class="form-control" id="personal-previous-address-line-1" name="personal-previous-address-line-1" type="text" placeholder="e.g. Flat 1">
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control" id="personal-previous-address-line-2" name="personal-previous-address-line-2" type="text" placeholder="e.g. 100 London Street">
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="personal-previous-address-city">City:</label>
+                      <input class="form-control" id="personal-previous-address-city" name="personal-previous-address-city" type="text"  placeholder="e.g. London">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="personal-previous-address-country">Country</label>
+                      <input type="text" readonly class="form-control-plaintext" id="personal-previous-address-country" value="United Kingdom">
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <hr>
+
+              <section class="kyc">
+                <div class="alert alert-warning">
+                  A background check will now be performed on these details. Please ensure all the details you have entered are correct.
+                </div>
+
+                <div class="form-group">
+                  <button type="button" class="btn btn-primary btn-block">Perform EKYC Check</button>
+                </div>
+              </section>
+
+              <hr>
+
+              <button class="btn btn-primary btn-block" type="submit">Submit</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./../dist/js/rms.js"></script>
+</body>
+
+</html>

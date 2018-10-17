@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <title>RMS - Principal Form</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    rel="stylesheet">
+  <link href="./../src/vendor/select2-4.0.5.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="./../dist/css/rms.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="navbar-brand"><img alt="Retail Merchant Services" src="https://www.retailmerchantservices.co.uk/media/2015/rms-logo-svg.svg"
+        width="120"></div>
+  </nav>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-3">
+        Sidebar
+      </div>
+
+      <div class="col-12 col-md-9">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <ul class="pagination pagination-steps has-titles">
+              <li class="page-item page-item-complete">
+                <span class="page-item-title">
+                  Legal
+                </span>
+                <a class="page-link" href="./legal-entity-form.with-js.html">
+                  <i class="fas fa-check-circle"></i>
+                </a>
+              </li>
+              <li class="page-item active">
+                <span class="page-item-title">
+                  Principal
+                </span>
+                <a class="page-link" href="./principal-form-registered.html">2</a>
+              </li>
+              <li class="page-item">
+                <span class="page-item-title">
+                  Location
+                </span>
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <span class="page-item-title">
+                  Signature
+                </span>
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <span class="page-item-title">
+                  Review
+                </span>
+                <a class="page-link" href="#">5</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h1 class="mt-1 mb-3">Principal Registered</h1>
+
+        <div class="row">
+          <div class="col-12 col-lg-8 pb-3">
+            <section class="directors-signatories">
+              <div class="form-group">
+                <label for="registered-director-select">Who is the director?</label>
+                <select class="form-control" id="registered-director-select" name="registered-director-select">
+                  <option disabled selected value="">
+                    Select a director
+                  </option>
+                  <option value="person-a">
+                    Person A
+                  </option>
+                  <option value="person-b">
+                    Person B
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="registered-signatory-select">Who is going to sign?</label>
+                <select class="form-control" id="registered-signatory-select" name="registered-signatory-select">
+                  <option disabled selected value="">
+                    Select a signatory
+                  </option>
+                  <option value="person-a">
+                    Person A
+                  </option>
+                  <option value="person-b">
+                    Person B
+                  </option>
+                </select>
+              </div>
+            </section>
+
+            <hr>
+
+            <form>
+              <section class="personal-details">
+                <h4>Personal Details</h4>
+
+                <div class="form-group">
+                  <label for="personal-first-name">First Name</label>
+                  <input type="text" readonly class="form-control" id="personal-first-name" name="personal-first-name" value="John">
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-middle-name">Middle Name</label>
+                  <input type="text" readonly class="form-control" id="personal-middle-name" name="personal-middle-name" value="Mark">
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-last-name">Last Name</label>
+                  <input type="text" readonly class="form-control" id="personal-last-name" name="personal-last-name" value="Doe">
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-role">Role</label>
+                  <input type="text" readonly class="form-control" id="personal-role" name="personal-role" value="Director">
+                </div>
+              </section>
+
+              <hr>
+
+              <section class="address-details">
+                <h4>Address Details</h4>
+
+                <p>We found the following address details:</p>
+
+                <address>
+                  <strong>Example Inc.</strong><br>
+                  1234 Example Street<br>
+                  Antartica, Example EC1 2DX
+                </address>
+
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input checked class="custom-control-input js-confirm-address" id="confirm-address" name="confirm-address" type="checkbox">
+                    <label class="custom-control-label" for="confirm-address">These details are correct</label>
+                  </div>
+                </div>
+              </section>
+
+              <hr>
+
+              <section class="manual-address-details">
+                <div class="form-group">
+                  <label for="personal-address-postcode">Postcode:</label>
+                  <input class="form-control" id="personal-address-postcode" name="personal-address-postcode" placeholder="e.g. W4 1NX" type="text">
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary js-postcode-lookup" type="button">Lookup Postcode</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-address-line-1">Address:</label>
+                  <input class="form-control" id="personal-address-line-1" name="personal-address-line-1" type="text" placeholder="e.g. Flat 1">
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control" id="personal-address-line-2" name="personal-address-line-2" type="text" placeholder="e.g. 100 London Street">
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="personal-address-city">City:</label>
+                      <input class="form-control" id="personal-address-city" name="personal-address-city" type="text"  placeholder="e.g. London">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="personal-address-country">Country</label>
+                      <input type="text" readonly class="form-control-plaintext" id="personal-address-country" value="United Kingdom">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input checked class="custom-control-input js-address-min-years" id="personal-address-min-years-check" name="personal-address-min-years-check"
+                      type="checkbox">
+                    <label class="custom-control-label" for="personal-address-min-years-check">Have you lived at this address for at least 2 years?</label>
+                  </div>
+                </div>
+
+                <div class="alert alert-info">
+                  As you haven't lived at this address for at least two years, please also fill in your previous address.
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-previous-address-postcode">Postcode:</label>
+                  <input class="form-control" id="personal-previous-address-postcode" name="personal-previous-address-postcode" placeholder="e.g. W4 1NX" type="text">
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary js-postcode-lookup" type="button">Lookup Postcode</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="personal-previous-address-line-1">Address:</label>
+                  <input class="form-control" id="personal-previous-address-line-1" name="personal-previous-address-line-1" type="text" placeholder="e.g. Flat 1">
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control" id="personal-previous-address-line-2" name="personal-previous-address-line-2" type="text" placeholder="e.g. 100 London Street">
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="personal-previous-address-city">City:</label>
+                      <input class="form-control" id="personal-previous-address-city" name="personal-previous-address-city" type="text"  placeholder="e.g. London">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="personal-previous-address-country">Country</label>
+                      <input type="text" readonly class="form-control-plaintext" id="personal-previous-address-country" value="United Kingdom">
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <hr>
+
+              <section class="kyc">
+                <div class="form-group">
+                  <label for="personal-dob">Date of Birth</label>
+                  <input type="date" class="form-control js-max-date-today" id="personal-dob" name="personal-dob">
+                </div>
+
+                <div class="alert alert-warning">
+                  A verification check will now be performed on these details. Please ensure all the details you have entered are correct.
+                </div>
+
+                <div class="form-group">
+                  <button type="button" class="btn btn-primary btn-block">Perform EKYC Check</button>
+                </div>
+              </section>
+
+              <hr>
+
+              <section class="kyc-success">
+                <div class="alert alert-success">
+                  <h5 class="alert-heading">EKYC check success</h5>
+                  <p class="mb-0">The EKYC check has passed successfully.</p>
+                </div>
+              </section>
+
+              <hr>
+
+              <section class="kyc-failure">
+                <div class="alert alert-danger">
+                  <h5 class="alert-heading">Additional details required</h5>
+                  We have been unable to verify your details. You will now need to provide additional proof of your identity.
+                </div>
+
+                <h5>Photo ID</h5>
+                <p>Please attach a Photo ID, which must be <strong>valid</strong> and <strong>signed</strong>.</p>
+
+                <div class="alert alert-info">
+                  <h6>Examples of valid Photo IDs are:</h6>
+                  <ul class="mb-0">
+                    <li>Driver's License</li>
+                    <li>Passport</li>
+                    <li>EU ID Card</li>
+                    <li class="js-global-selected-show">Firearms License</li>
+                  </ul>
+                </div>
+
+                <div class="form-group">
+                  <label for="ekyc-photo-id">
+                    Attach Photo ID
+                  </label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="photo-id">
+                    <label class="custom-file-label" for="photo-id">Choose file</label>
+                  </div>
+
+                  <!--
+                    Due to the file input being super CSS unfriendly, the custom Bootstrap
+                    input does not display an indication of a file being attached.
+                    Therefore, an alert needs to be displayed below the input
+                    when a file is attached. This will need to be dynamically displayed
+                    with JavaScript.
+                  -->
+                  <div class="alert alert-success mt-2">Photo ID attached</div>
+                </div>
+
+                <hr>
+
+                <h5>Proof of home address</h5>
+                <p>Please attach proof of your home address, which must be <strong>within the last 6 months</strong>.</p>
+
+                <div class="alert alert-info">
+                  <h6>Examples of valid proof of home address are:</h6>
+                  <ul class="mb-0">
+                    <li>Home utility bill</li>
+                    <li>Council tax bill</li>
+                    <li>Personal bank statement</li>
+                    <li>Credit card statement</li>
+                    <li>HMRC letter</li>
+                  </ul>
+                </div>
+
+                <!--
+                    Due to the file input being super CSS unfriendly, the custom Bootstrap
+                    input does not display an indication of a file being attached.
+                    Therefore, an alert needs to be displayed below the input
+                    when a file is attached. This will need to be dynamically displayed
+                    with JavaScript.
+                  -->
+                <div class="form-group">
+                  <label for="ekyc-address">
+                    Attach proof of address
+                  </label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="ekyc-address">
+                    <label class="custom-file-label" for="ekyc-address">Choose file</label>
+                  </div>
+                  <div class="alert alert-success mt-2">Proof of address attached</div>
+                </div>
+              </section>
+
+              <hr>
+
+              <!--
+                The following would be displayed if there are additional owners
+                with >25% stake in the business
+              -->
+
+              <div class="form-group">
+                <div class="alert alert-info">
+                  Please select all additional owners with a stake of more than 25% in the business
+                </div>
+                <label for="business-additional-owners">Additional owners</label>
+                <select class="js-additional-owners" id="business-additional-owners" multiple name="business-additional-owners">
+                  <option value="additional-owner-1">
+                    Jason Response
+                  </option>
+                  <option value="additional-owner-2">
+                    Abraham Pigeon
+                  </option>
+                  <option value="additional-owner-3">
+                    Justin Case
+                  </option>
+                </select>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-primary btn-block" type="submit">Submit</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./../dist/js/vendor.js"></script>
+  <script>
+    $(function() {
+      $('.js-additional-owners').select2({ width: '100%' });
+    });
+  </script>
+</body>
+
+</html>

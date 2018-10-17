@@ -24,9 +24,16 @@
 
   $(function () {
     /*
+     * Set all date inputs with a custom class to have a max date of today
+     */
+    var jsDate = new Date();
+    var todayDate = "".concat(jsDate.getFullYear(), "-").concat(padNum(jsDate.getMonth()), "-").concat(padNum(jsDate.getDate()));
+    $('input[type="date"].js-max-date-today').attr('max', todayDate);
+    /*
      * Handle Legal Entity Dropdown
      */
     // store all relevant forms in a variable
+
     var forms = $('.js-legal-entity-form');
     $('#legal-entities-picker').on('change', function () {
       // get the value of the option
@@ -81,8 +88,6 @@
      * Handle showing VAT number field and link if BTO and Start Date meet requirement
      */
 
-    var jsDate = new Date();
-    var todayDate = "".concat(jsDate.getFullYear(), "-").concat(padNum(jsDate.getMonth()), "-").concat(padNum(jsDate.getDate()));
     var businessStartDateField = $('.js-business-date-start');
     var businessTurnoverField = $('.js-business-turnover');
     var vatGroup = $('.js-vat-group');
