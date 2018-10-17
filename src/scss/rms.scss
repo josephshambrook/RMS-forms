@@ -34,19 +34,43 @@ $theme-colors: (
  * - Bolden all form labels
  */
 
-.form-control {
-  padding-bottom: 0.75rem;
-  padding-top: 0.75rem;
-  height: calc(3.1rem + 2px);
-}
-
-.form-control-plaintext {
-  padding-bottom: 0.75rem;
-  padding-top: 0.75rem;
-}
+$rms-input-height: calc(3.1rem + 2px);
+$rms-input-padding: 0.75rem;
 
 label {
   font-weight: 500;
+}
+
+.form-control {
+  padding-bottom: $rms-input-padding;
+  padding-top: $rms-input-padding;
+  height: $rms-input-height;
+}
+
+.form-control-plaintext {
+  padding-bottom: $rms-input-padding;
+  padding-top: $rms-input-padding;
+}
+
+// styling the custom file input is a lot more fiddly
+.custom-file {
+  height: $rms-input-height;
+}
+
+.custom-file-input {
+  height: $rms-input-height;
+}
+
+.custom-file-label {
+  height: $rms-input-height;
+  padding-bottom: $rms-input-padding;
+  padding-top: $rms-input-padding;
+
+  &::after {
+    height: 3.1rem;
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+  }
 }
 
 /*
@@ -165,7 +189,7 @@ label {
 
 .select2-container .select2-selection--single,
 .select2-container--default .select2-selection--multiple {
-  height: calc(3.1rem + 2px);
+  height: $rms-input-height;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {

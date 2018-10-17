@@ -18,9 +18,10 @@ If you'd like to edit the Sass or JS, you can follow these steps to set up your 
 - To build the Sass files, run `npm run sass:build` or `yarn sass:build`
 - To watch the Sass files for new changes and build automatically, run `npm run sass:dev` or `yarn sass:dev`
 - To build the JS files, run `npm run js:build` or `yarn js:build`
+- To watch the JS files for new changes and build automatically, run `npm run js:dev` or `yarn js:dev`
 
 ### Examples
 
 `/index.html` contains the main styleguide.
 `/color-components.html` contains examples of components that are coloured, for testing the theme.
-`/forms` contains templates of HTML to build new files from.
+`/templates` contains templates of HTML to build new files from.

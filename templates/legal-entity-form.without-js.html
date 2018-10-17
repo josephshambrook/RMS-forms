@@ -8,6 +8,7 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     rel="stylesheet">
+  <link href="./../src/vendor/select2-4.0.5.min.css" media="screen" rel="stylesheet" type="text/css">
   <link href="./../dist/css/rms.css" media="screen" rel="stylesheet" type="text/css">
 </head>
 
@@ -68,12 +69,10 @@
             </div>
 
             <form class="js-legal-entity-form" data-entity-type="unregistered-uk">
-
               <div class="form-group">
                 <label for="business-name">Business Name:</label>
                 <input class="form-control" id="business-name" name="business-name" placeholder="e.g. Retail Management Services" type="text">
               </div>
-
               <div class="form-group">
                 <label for="business-phone">Business Phone Number:</label>
                 <input class="form-control" id="business-phone"
@@ -85,67 +84,96 @@
                 <span>Find</span>
               </button>
 
-
               <hr>
 
               <div class="js-business-details-form">
+                <h5>Business Address</h5>
+
                 <div class="form-group">
-                  <label for="address-country">Country:</label>
-                  <select class="form-control" id="address-country" name="address-country">
-                    <option disabled selected value="">
-                      Select country
-                    </option>
-                    <option value="united-kingdom">
-                      United Kingdom
-                    </option>
-                  </select>
+                  <label for="business-address-postcode">Postcode:</label>
+                  <input class="form-control" id="business-address-postcode" name="business-address-postcode" placeholder="e.g. W4 1NX" type="text">
                 </div>
 
                 <div class="form-group">
-                    <label for="address-postcode">Postcode:</label>
-                    <input class="form-control" id="address-postcode" name="address-postcode" placeholder="e.g. W4 1NX" type="text">
+                  <button class="btn btn-primary js-postcode-lookup" type="button">Lookup Postcode</button>
                 </div>
 
                 <div class="form-group">
-                  <button class="btn btn-primary" type="button">Lookup Postcode</button>
+                  <label for="business-address-line-1">Address:</label>
+                  <input class="form-control" id="business-address-line-1" name="business-address-line-1" type="text" placeholder="e.g. Floor 2">
                 </div>
 
                 <div class="form-group">
-                  <label for="address-line-1">Address:</label>
-                  <input class="form-control" id="address-line-1" name="address-line-1" type="text">
-                </div>
-
-                <div class="form-group">
-                  <input class="form-control" id="address-line-2" name="address-line-2" type="text">
+                  <input class="form-control" id="business-address-line-2" name="business-address-line-2" type="text" placeholder="e.g. 100 London Street">
                 </div>
 
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
-                      <label for="address-city">City:</label>
-                      <input class="form-control" id="address-city" name="address-city" type="text">
+                      <label for="business-address-city">City:</label>
+                      <input class="form-control" id="business-address-city" name="business-address-city" type="text"  placeholder="e.g. London">
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-group">
-                      <label for="address-county">County:</label>
-                      <input class="form-control" id="address-county" name="address-county" type="text">
+                      <label for="business-address-country">Country</label>
+                      <input type="text" readonly class="form-control-plaintext" id="business-address-country" value="United Kingdom">
                     </div>
                   </div>
                 </div>
 
-                <div class="custom-control custom-checkbox">
-                  <input checked class="custom-control-input" id="address-merchant-opt-in" name="address-merchant-opt-in"
-                    type="checkbox">
-                  <label class="custom-control-label" for="address-merchant-opt-in">Send my merchant state here</label>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input checked class="custom-control-input js-address-merchant-opt" id="business-address-merchant-opt-in" name="business-address-merchant-opt-in"
+                      type="checkbox">
+                    <label class="custom-control-label" for="business-address-merchant-opt-in">Send my merchant statement here</label>
+                  </div>
+                </div>
+
+                <div class="js-merchant-address-form">
+                  <hr>
+
+                  <h5>Merchant Address</h5>
+
+                  <div class="form-group">
+                    <label for="merchant-address-postcode">Postcode:</label>
+                    <input class="form-control" id="merchant-address-postcode" name="merchant-address-postcode" placeholder="e.g. W4 1NX" type="text">
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn btn-primary" type="button">Lookup Postcode</button>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="merchant-address-line-1">Address:</label>
+                    <input class="form-control" id="merchant-address-line-1" name="merchant-address-line-1" type="text" placeholder="e.g. Floor 2">
+                  </div>
+
+                  <div class="form-group">
+                    <input class="form-control" id="merchant-address-line-2" name="merchant-address-line-2" type="text" placeholder="e.g. 100 London Street">
+                  </div>
+
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="merchant-address-city">City:</label>
+                        <input class="form-control" id="merchant-address-city" name="merchant-address-city" type="text" placeholder="London">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="merchant-address-country">Country</label>
+                        <input type="text" readonly class="form-control-plaintext" id="merchant-address-country" value="United Kingdom">
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <hr>
 
                 <div class="form-group">
                   <label for="business-date-start">Business Start Date:</label>
-                  <input class="form-control" id="business-date-start"
-                    name="business-date-start" type="date">
+                  <input class="form-control js-business-date-start" id="business-date-start" name="business-date-start" type="date">
                 </div>
 
                 <div class="form-group">
@@ -154,36 +182,27 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="business-turnover">Business Turnover p/a:</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">£</span>
+                    </div>
+                    <input type="number" class="form-control js-business-turnover" aria-label="Amount" placeholder="e.g. 10000">
+                  </div>
+                </div>
+
+                <div class="form-group js-vat-group">
+                  <div class="alert alert-info" role="alert">
+                    As the business you filled in either started at least 6 months ago, or the business turnover is at least £85,000 p/a, you will need to provide a VAT number for this business as well.
+                  </div>
+
                   <label for="business-vat">VAT Number:</label>
-                  <input class="form-control" id="business-vat" name="business-vat" type="text">
+                  <input class="form-control" id="business-vat" name="business-vat" type="text" placeholder="e.g. GB 102102102">
                   <small class="form-text text-muted">
                     <a data-target="#js-modal-custom-vat" data-toggle="modal" href="#">I do not have a VAT number</a>
                   </small>
                 </div>
 
-                <div class="form-group">
-                  <label for="business-operating-countries">Countries which the business operates in:</label>
-                  <select class="js-operating-countries form-control" id="business-operating-countries" multiple="multiple" name="countries[]">
-                    <option value="DK">
-                      Denmark
-                    </option>
-                    <option value="IE">
-                      Ireland
-                    </option>
-                    <option value="IT">
-                      Italy
-                    </option>
-                    <option value="JP">
-                      Japan
-                    </option>
-                    <option value="SE">
-                      Sweden
-                    </option>
-                    <option value="UK">
-                      United Kingdom
-                    </option>
-                  </select>
-                </div>
                 <hr>
 
                 <div class="form-group">
@@ -215,9 +234,7 @@
                 <a class="btn btn-primary btn-block" href="#">Next</a>
 
                 <hr>
-
               </div>
-
             </form>
           </div>
         </div>
@@ -228,41 +245,43 @@
   <div aria-hidden="true" aria-labelledby="find-address-label" class="modal fade" id="js-modal-find-address" role="dialog"
     tabindex="-1">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Addresses Found</h5><button aria-label="Close" class="close"
-            data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+      <form>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Addresses Found</h5><button aria-label="Close" class="close"
+              data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="custom-control custom-radio">
+                <input checked class="custom-control-input" id="business-address-1" name="business-address" type="radio"
+                  value="address-1"> <label class="custom-control-label" for="business-address-1">Address 1</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="business-address-2" name="business-address" type="radio" value="address-2">
+                <label class="custom-control-label" for="business-address-2">Address 2</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="business-address-3" name="business-address" type="radio" value="address-3">
+                <label class="custom-control-label" for="business-address-3">Address 3</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="business-address-4" name="business-address" type="radio" value="address-4">
+                <label class="custom-control-label" for="business-address-4">Address 4</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="business-address-manual" name="business-address" type="radio"
+                  value="manual"> <label class="custom-control-label" for="business-address-manual">Enter address
+                  manually</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+            <button class="btn btn-primary js-find-address-submit" type="submit">Select</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <form>
-            <div class="custom-control custom-radio">
-              <input checked class="custom-control-input" id="business-address-1" name="business-address" type="radio"
-                value="address-1"> <label class="custom-control-label" for="business-address-1">Address 1</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="business-address-2" name="business-address" type="radio" value="address-2">
-              <label class="custom-control-label" for="business-address-2">Address 2</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="business-address-3" name="business-address" type="radio" value="address-3">
-              <label class="custom-control-label" for="business-address-3">Address 3</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="business-address-4" name="business-address" type="radio" value="address-4">
-              <label class="custom-control-label" for="business-address-4">Address 4</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="business-address-manual" name="business-address" type="radio"
-                value="manual"> <label class="custom-control-label" for="business-address-manual">Enter address
-                manually</label>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button> <button class="btn btn-primary js-find-address-submit"
-            type="button">Select</button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 
@@ -270,40 +289,43 @@
     tabindex="-1">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Select a category and type your number</h5><button aria-label="Close"
-            class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="custom-control custom-radio">
-              <input checked class="custom-control-input" id="custom-vat-limited" name="custom-vat-option" type="radio"
-                value="vat-limited"> <label class="custom-control-label" for="custom-vat-limited">Limited</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="custom-vat-llp" name="custom-vat-option" type="radio" value="vat-llp">
-              <label class="custom-control-label" for="custom-vat-llp">Limited liability partnership</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="custom-vat-charity" name="custom-vat-option" type="radio" value="vat-charity">
-              <label class="custom-control-label" for="custom-vat-charity">Charity</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" id="custom-vat-trust" name="custom-vat-option" type="radio" value="vat-trust">
-              <label class="custom-control-label" for="custom-vat-trust">Trust</label>
-            </div>
-            <hr>
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Select a category and type your number</h5>
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
             <div class="form-group">
-              <label for="custom-vat-number">Number:</label>
-              <input class="form-control" id="custom-vat-number" name="custom-vat-number"
-                type="text">
+              <label for="corporate-tax-id">Corporate Tax ID:</label>
+              <input class="form-control" id="corporate-tax-id" name="corporate-tax-id" type="text">
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-          <button class="btn btn-primary" data-dismiss="modal" type="button">Add Number</button>
-        </div>
+
+            <div class="form-group">
+              <label for="income-tax-number">Income Tax Number:</label>
+              <input class="form-control" id="income-tax-number" name="income-tax-number" type="text">
+            </div>
+
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input js-business-charity-option" id="business-charity-option" type="checkbox">
+                <label class="custom-control-label" for="business-charity-option">This business is a charity</label>
+              </div>
+            </div>
+
+            <div class="form-group js-charity-number-group">
+              <label for="charity-number">Charity Number:</label>
+              <input class="form-control" id="charity-number" name="charity-number" type="text">
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+            <button class="btn btn-primary" data-dismiss="modal" type="button">Add Number</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
