@@ -70,21 +70,6 @@
           <div class="col-12 col-lg-8 pb-3">
             <section class="directors-signatories">
               <div class="form-group">
-                <label for="registered-director-select">Who is the director?</label>
-                <select class="form-control" id="registered-director-select" name="registered-director-select">
-                  <option disabled selected value="">
-                    Select a director
-                  </option>
-                  <option value="person-a">
-                    Person A
-                  </option>
-                  <option value="person-b">
-                    Person B
-                  </option>
-                </select>
-              </div>
-
-              <div class="form-group">
                 <label for="registered-signatory-select">Who is going to sign?</label>
                 <select class="form-control" id="registered-signatory-select" name="registered-signatory-select">
                   <option disabled selected value="">
@@ -100,34 +85,53 @@
               </div>
             </section>
 
-            <hr>
+            <hr class="m">
 
             <form>
               <section class="personal-details">
                 <h4>Personal Details</h4>
 
-                <div class="form-group">
-                  <label for="personal-first-name">First Name</label>
-                  <input type="text" readonly class="form-control" id="personal-first-name" name="personal-first-name" value="John">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="personal-first-name">First Name</label>
+                      <input type="text" readonly class="form-control" id="personal-first-name" name="personal-first-name" value="John">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="personal-middle-name">Middle Name</label>
+                      <input type="text" readonly class="form-control" id="personal-middle-name" name="personal-middle-name" value="Mark">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="personal-last-name">Last Name</label>
+                      <input type="text" readonly class="form-control" id="personal-last-name" name="personal-last-name" value="Doe">
+                    </div>
+                  </div>
                 </div>
 
-                <div class="form-group">
-                  <label for="personal-middle-name">Middle Name</label>
-                  <input type="text" readonly class="form-control" id="personal-middle-name" name="personal-middle-name" value="Mark">
-                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="personal-role">Role</label>
+                      <input type="text" readonly class="form-control" id="personal-role" name="personal-role" value="Director">
+                    </div>
+                  </div>
 
-                <div class="form-group">
-                  <label for="personal-last-name">Last Name</label>
-                  <input type="text" readonly class="form-control" id="personal-last-name" name="personal-last-name" value="Doe">
-                </div>
-
-                <div class="form-group">
-                  <label for="personal-role">Role</label>
-                  <input type="text" readonly class="form-control" id="personal-role" name="personal-role" value="Director">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="personal-dob">Date of Birth</label>
+                      <input type="date" class="form-control js-max-date-today" id="personal-dob" name="personal-dob">
+                    </div>
+                  </div>
                 </div>
               </section>
 
-              <hr>
+              <hr class="m">
 
               <section class="address-details">
                 <h4>Address Details</h4>
@@ -148,7 +152,7 @@
                 </div>
               </section>
 
-              <hr>
+              <hr class="m">
 
               <section class="manual-address-details">
                 <div class="form-group">
@@ -230,14 +234,9 @@
                 </div>
               </section>
 
-              <hr>
+              <hr class="m">
 
               <section class="kyc">
-                <div class="form-group">
-                  <label for="personal-dob">Date of Birth</label>
-                  <input type="date" class="form-control js-max-date-today" id="personal-dob" name="personal-dob">
-                </div>
-
                 <div class="alert alert-warning">
                   A verification check will now be performed on these details. Please ensure all the details you have entered are correct.
                 </div>
@@ -247,7 +246,7 @@
                 </div>
               </section>
 
-              <hr>
+              <hr class="m">
 
               <section class="kyc-success">
                 <div class="alert alert-success">
@@ -256,26 +255,36 @@
                 </div>
               </section>
 
-              <hr>
+              <hr class="m">
 
               <section class="kyc-failure">
                 <div class="alert alert-danger">
                   <h5 class="alert-heading">Additional details required</h5>
-                  We have been unable to verify your details. You will now need to provide additional proof of your identity.
+                  We have been unable to verify your details. You are therefore required to provide a valid Photo ID and recent proof of home address
                 </div>
 
                 <h5>Photo ID</h5>
-                <p>Please attach a Photo ID, which must be <strong>valid</strong> and <strong>signed</strong>.</p>
+                <p>You will need to provide a Photo ID, which must be <strong>valid</strong> and <strong>signed</strong>.</p>
 
-                <!-- TODO: list as radio buttons -->
-                <div class="alert alert-info">
-                  <h6>Examples of valid Photo IDs are:</h6>
-                  <ul class="mb-0">
-                    <li>Driver's License</li>
-                    <li>Passport</li>
-                    <li>EU ID Card</li>
-                    <li class="js-global-selected-show">Firearms License</li>
-                  </ul>
+                <p>Please select which type of Photo ID you are providing:</p>
+
+                <div class="form-group">
+                  <div class="custom-control custom-radio">
+                    <input checked class="custom-control-input" id="ekyc-photoid-drivers" name="ekyc-photoid-type" type="radio" value="drivers-license">
+                    <label class="custom-control-label" for="ekyc-photoid-drivers">Driver's License</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input class="custom-control-input" id="ekyc-photoid-passport" name="ekyc-photoid-type" type="radio" value="passport">
+                    <label class="custom-control-label" for="ekyc-photoid-passport">Passport</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input class="custom-control-input" id="ekyc-photoid-eu-id" name="ekyc-photoid-type" type="radio" value="eu-id">
+                    <label class="custom-control-label" for="ekyc-photoid-eu-id">EU ID Card</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input class="custom-control-input" id="ekyc-photoid-firearms" name="ekyc-photoid-type" type="radio" value="firearms">
+                    <label class="custom-control-label" for="ekyc-photoid-firearms">Firearms License</label>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -297,22 +306,34 @@
                   <div class="alert alert-success mt-2">Photo ID attached</div>
                 </div>
 
-                <hr>
+                <hr class="m">
 
                 <h5>Proof of home address</h5>
                 <p>Please attach proof of your home address, which must be <strong>within the last 6 months</strong>.</p>
 
-                <!-- TODO: list as radio buttons -->
+                <p>Please select which type of proof of home address you are providing:</p>
 
-                <div class="alert alert-info">
-                  <h6>Examples of valid proof of home address are:</h6>
-                  <ul class="mb-0">
-                    <li>Home utility bill</li>
-                    <li>Council tax bill</li>
-                    <li>Personal bank statement</li>
-                    <li>Credit card statement</li>
-                    <li>HMRC letter</li>
-                  </ul>
+                <div class="form-group">
+                  <div class="custom-control custom-radio">
+                    <input checked class="custom-control-input" id="ekyc-address-utility" name="ekyc-address-type" type="radio" value="utility">
+                    <label class="custom-control-label" for="ekyc-address-utility">Home utility bill</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input class="custom-control-input" id="ekyc-address-council" name="ekyc-address-type" type="radio" value="council">
+                    <label class="custom-control-label" for="ekyc-address-council">Council tax bill</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input class="custom-control-input" id="ekyc-address-bank" name="ekyc-address-type" type="radio" value="bank">
+                    <label class="custom-control-label" for="ekyc-address-bank">Personal bank statement</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input class="custom-control-input" id="ekyc-address-creditcard" name="ekyc-address-type" type="radio" value="creditcard">
+                    <label class="custom-control-label" for="ekyc-address-creditcard">Credit card statement</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input class="custom-control-input" id="ekyc-address-hmrc" name="ekyc-address-type" type="radio" value="hmrc">
+                    <label class="custom-control-label" for="ekyc-address-hmrc">HMRC letter</label>
+                  </div>
                 </div>
 
                 <!--
@@ -334,7 +355,7 @@
                 </div>
               </section>
 
-              <hr>
+              <hr class="m">
 
               <!--
                 The following would be displayed if there are additional owners
@@ -359,7 +380,7 @@
                 </select>
               </div>
 
-              <hr>
+              <hr class="m">
 
               <button class="btn btn-primary btn-block" type="submit">Submit</button>
 

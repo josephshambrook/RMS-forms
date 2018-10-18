@@ -52,6 +52,11 @@ label:not(.custom-control-label) {
   padding-top: $rms-input-padding;
 }
 
+// giving this a border so that it's easier to see on bright external displays
+.custom-control-label::before {
+  border: 1px solid $color-rms;
+}
+
 // styling the custom file input is a lot more fiddly
 .custom-file {
   height: $rms-input-height;
