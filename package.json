@@ -1,6 +1,6 @@
 {
   "name": "rms-forms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Form elements for use on RMS",
   "main": "index.js",
   "scripts": {

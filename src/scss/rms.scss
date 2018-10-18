@@ -73,11 +73,17 @@ label {
   }
 }
 
+.custom-select {
+  height: $rms-input-height;
+  padding-bottom: $rms-input-padding;
+  padding-top: $rms-input-padding;
+}
+
 /*
  * Sticky sidebar nav
  */
 
- @supports (position: sticky) {
+@supports (position: sticky) {
   .nav-sidebar-sticky {
     // this has so-so browser support, but it falls back gracefully on older browsers
     position: sticky;
@@ -128,7 +134,7 @@ label {
     z-index: 2;
   }
 
-  @media (min-width: map-get($grid-breakpoints, md)) {
+  @media screen and (min-width: map-get($grid-breakpoints, md)) {
     .page-item-title {
       font-size: 12px;
       width: 150%;
