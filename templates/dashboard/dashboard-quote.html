@@ -41,7 +41,6 @@
       <main class="col-12 col-md-9">
         <div class="row">
           <div class="col-12 col-lg-8">
-
             <div class="alert alert-success alert-dismissible fade show d-none js-saved-alert" role="alert">
               <div>
                 <h4>Quote saved</h4>
@@ -558,6 +557,46 @@
               </div>
             </section>
           </div>
+
+          <aside class="col-12 col-lg-4">
+            <div class="card bg-light mb-3 nav-sidebar-sticky">
+              <div class="card-header">
+                <h5>Quote summary</h5>
+              </div>
+              <div class="card-body">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Credit</td>
+                      <td>£10</td>
+                    </tr>
+                    <tr>
+                      <td>Debit</td>
+                      <td>£10</td>
+                    </tr>
+                    <tr>
+                      <td>Corp Credit</td>
+                      <td>£10</td>
+                    </tr>
+                    <tr>
+                      <td>Corp Debit</td>
+                      <td>£10</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Total</strong></td>
+                      <td>£40</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </aside>
         </div>
       </main>
     </div>
@@ -622,6 +661,7 @@
 
           // display alert
           $alertQuoteSavedName.text($newQuoteName.val());
+          $newQuoteName.val('');
           $alertQuoteSaved.removeClass('d-none').focus();
 
           // scroll to top of page

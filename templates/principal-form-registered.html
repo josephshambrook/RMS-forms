@@ -87,7 +87,7 @@
 
             <hr class="m">
 
-            <form>
+            <form class="js-principal-form">
               <section class="personal-details">
                 <h4>Personal Details</h4>
 
@@ -150,11 +150,19 @@
                     <label class="custom-control-label" for="confirm-address">These details are correct</label>
                   </div>
                 </div>
+
+                <div class="form-group js-current-address-min-years-container">
+                  <div class="custom-control custom-checkbox">
+                    <input checked class="custom-control-input js-current-address-min-years" id="personal-address-min-years-check" name="personal-address-min-years-check"
+                      type="checkbox">
+                    <label class="custom-control-label" for="personal-address-min-years-check">I lived at this address for at least 2 years</label>
+                  </div>
+                </div>
               </section>
 
               <hr class="m">
 
-              <section class="manual-address-details">
+              <section class="js-edit-main-address-details d-none">
                 <div class="form-group">
                   <label for="personal-address-postcode">Postcode:</label>
                   <input class="form-control" id="personal-address-postcode" name="personal-address-postcode" placeholder="e.g. W4 1NX" type="text">
@@ -190,15 +198,21 @@
 
                 <div class="form-group">
                   <div class="custom-control custom-checkbox">
-                    <input checked class="custom-control-input js-address-min-years" id="personal-address-min-years-check" name="personal-address-min-years-check"
+                    <input checked class="custom-control-input js-current-address-min-years" id="personal-edited-address-min-years-check" name="personal-address-min-years-check"
                       type="checkbox">
-                    <label class="custom-control-label" for="personal-address-min-years-check">Have you lived at this address for at least 2 years?</label>
+                    <label class="custom-control-label" for="personal-edited-address-min-years-check">I lived at this address for at least 2 years</label>
                   </div>
                 </div>
 
-                <div class="alert alert-info">
-                  As you haven't lived at this address for at least two years, please also fill in your previous address.
+                <div class="alert alert-info js-address-alert">
+                  We need you to fill in all addresses you have lived in since <span class="js-current-month"></span> <span class="js-current-year-minus-2"></span>
                 </div>
+
+                <hr>
+              </section>
+
+              <section class="js-new-address-template d-none">
+                <h4>New Address</h4>
 
                 <div class="form-group">
                   <label for="personal-previous-address-postcode">Postcode:</label>
@@ -232,9 +246,17 @@
                     </div>
                   </div>
                 </div>
-              </section>
 
-              <hr class="m">
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input checked class="custom-control-input js-new-address-min-years" id="personal-address-min-years-check" name="personal-address-min-years-check"
+                      type="checkbox">
+                    <label class="custom-control-label" for="personal-address-min-years-check">I lived at this address before <span class="js-current-month"></span> <span class="js-current-year-minus-2"></span></label>
+                  </div>
+                </div>
+
+                <hr class="m">
+              </section>
 
               <section class="kyc">
                 <div class="alert alert-warning">
@@ -383,7 +405,6 @@
               <hr class="m">
 
               <button class="btn btn-primary btn-block" type="submit">Submit</button>
-
             </form>
           </div>
         </div>
@@ -393,8 +414,34 @@
 
   <script src="./../dist/js/vendor.js"></script>
   <script>
+    const jsDate = new Date();
+
+    const months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+
     $(function() {
+      const $form = $('.js-principal-form');
+
       $('.js-additional-owners').select2({ width: '100%' });
+
+      // populate all of these elements with the current year - 2 (2018 - 2 = 2016
+      $('.js-current-year-minus-2').text(jsDate.getFullYear() - 2);
+
+      // populate all of these elements with the current month
+      $('.js-current-month').text(months[jsDate.getMonth() + 1]);
+
+      // all this would be easier with Angular!
+      $form.on('change', '.js-confirm-address', function () {
+        if (this.checked) {
+          $('.js-edit-main-address-details').addClass('d-none');
+          $('.js-current-address-min-years-container').removeClass('d-none');
+        } else {
+          $('.js-edit-main-address-details').removeClass('d-none');
+          $('.js-current-address-min-years-container').addClass('d-none');
+        }
+      });
     });
   </script>
 </body>
