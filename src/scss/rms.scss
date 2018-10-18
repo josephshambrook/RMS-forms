@@ -37,7 +37,7 @@ $theme-colors: (
 $rms-input-height: calc(3.1rem + 2px);
 $rms-input-padding: 0.75rem;
 
-label {
+label:not(.custom-control-label) {
   font-weight: 500;
 }
 
@@ -259,4 +259,20 @@ label {
 
 .flex-grow-1 {
   flex-grow: 1;
+}
+
+hr {
+  border-top-color: $color-rms;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+  hr.m {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
+  hr.l {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
 }

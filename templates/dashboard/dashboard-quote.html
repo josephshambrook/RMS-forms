@@ -34,6 +34,7 @@
           <a class="nav-item nav-link" href="#">Applications <span class="badge badge-warning">2</span></a>
           <a class="nav-item nav-link" href="#">MCC Search</a>
           <a class="nav-item nav-link active" href="./dashboard-quote.html">Create Quote</a>
+          <a class="nav-item nav-link" href="#">Previous Quotes</a>
         </nav>
       </aside>
 
@@ -41,418 +42,519 @@
         <div class="row">
           <div class="col-12 col-lg-8">
 
+            <div class="alert alert-success alert-dismissible fade show d-none js-saved-alert" role="alert">
+              <div>
+                <h4>Quote saved</h4>
+                <p class="mb-0">Quote saved as "<span class="js-saved-alert-name"></span>"</p>
+              </div>
+
+              <button type="button" class="close js-saved-alert-hide" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
             <h3>Create Quote</h3>
 
-            <div class="form-group">
-              <label for="type">Type:</label>
-              <select name="type" id="type" class="form-control">
-                <option value="ntc">NTC</option>
-                <option value="switcher">Switcher</option>
-                <option value="switcher-no-statement">Switcher - No Statement</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="product">Product</label>
-              <select name="product" id="product" class="form-control">
-                <option disabled selected>Choose a product</option>
-                <option value="cp">C&P</option>
-                <option value="ecom">ECOM</option>
-                <option value="vt">VT</option>
-                <option value="pbl">PBL</option>
-              </select>
-            </div>
-
             <section>
-              <div class="form-group">
-                <label for="settlement">Settlement</label>
-                <select name="settlement" id="settlement" class="form-control">
-                  <option value="same-day">Same Day - £2.95</option>
-                  <option value="faster">Faster</option>
-                  <option value="standard">Standard - £0.00</option>
-                </select>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select name="type" id="type" class="form-control">
+                      <option value="ntc">NTC</option>
+                      <option value="switcher">Switcher</option>
+                      <option value="switcher-no-statement">Switcher - No Statement</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="product">Product</label>
+                    <select name="product" id="product" class="form-control">
+                      <option disabled selected>Choose a product</option>
+                      <option value="cp">C&P</option>
+                      <option value="ecom">ECOM</option>
+                      <option value="vt">VT</option>
+                      <option value="pbl">PBL</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="settlement">Settlement</label>
+                    <select name="settlement" id="settlement" class="form-control">
+                      <option value="same-day">Same Day - £2.95</option>
+                      <option value="faster">Faster</option>
+                      <option value="standard">Standard - £0.00</option>
+                    </select>
+                  </div>
+                </div>
               </div>
+
             </section>
 
-            <hr>
+            <hr class="l">
 
             <section>
               <h6>MCC Section</h6>
             </section>
 
-            <hr>
+            <hr class="l">
 
             <section>
-              <div class="form-group">
-                <label for="bto">BTO p/m</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">£</span>
-                  </div>
-                  <input type="text" class="form-control" name="bto" id="bto" placeholder="e.g. 100000">
-                </div>
-                <small class="text-muted">Must be a number greater than 1</small>
-              </div>
-
-              <div class="form-group">
-                <label for="cto">CTO p/m</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">£</span>
-                  </div>
-                  <input type="text" class="form-control" name="cto" id="cto" placeholder="e.g. 100000">
-                </div>
-                <small class="text-muted">Must be a number greater than 1, and less than the BTO</small>
-              </div>
-
-              <div class="form-group">
-                <label for="atv">ATV</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">£</span>
-                  </div>
-                  <input type="text" class="form-control" name="atv" id="atv" placeholder="e.g. 100000">
-                </div>
-                <small class="text-muted">Must be a number greater than 1, and less than the CTO</small>
-              </div>
-
-              <div class="form-group">
-                <label for="debit-split">Debit Split</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" name="debit-split" id="debit-split" placeholder="e.g. 50">
-                  <div class="input-group-append">
-                    <span class="input-group-text">%</span>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="bto">BTO p/m</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">£</span>
+                      </div>
+                      <input type="text" class="form-control" name="bto" id="bto" placeholder="e.g. 100000">
+                    </div>
                   </div>
                 </div>
-                <small class="text-muted">Must be between 0-100%</small>
-              </div>
-            </section>
 
-            <hr>
-
-            <section>
-              <h5>Calculations</h5>
-
-              <div class="form-group">
-                <label for="credit-card-rate">Credit Card Rate</label>
-                <div class="input-group">
-                  <input readonly type="text" class="form-control" name="credit-card-rate" id="credit-card-rate">
-                  <div class="input-group-append">
-                    <span class="input-group-text">%</span>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="cto">CTO p/m</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">£</span>
+                      </div>
+                      <input type="text" class="form-control" name="cto" id="cto" placeholder="e.g. 100000">
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label for="debit-card-rate">Debit Card Rate</label>
-                <div class="input-group">
-                  <input readonly type="text" class="form-control" name="debit-card-rate" id="debit-card-rate">
-                  <div class="input-group-append">
-                    <span class="input-group-text">%</span>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="cto">CTO p/m</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">£</span>
+                      </div>
+                      <input type="text" class="form-control" name="cto" id="cto" placeholder="e.g. 100000">
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label for="corp-c-rate">Corp C Rate</label>
-                <div class="input-group">
-                  <input readonly type="text" class="form-control" name="corp-c-rate" id="corp-c-rate">
-                  <div class="input-group-append">
-                    <span class="input-group-text">%</span>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="atv">ATV</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">£</span>
+                      </div>
+                      <input type="text" class="form-control" name="atv" id="atv" placeholder="e.g. 100000">
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label for="corp-d-rate">Corp D Rate</label>
-                <div class="input-group">
-                  <input readonly type="text" class="form-control" name="corp-d-rate" id="corp-d-rate">
-                  <div class="input-group-append">
-                    <span class="input-group-text">%</span>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="debit-split">Debit Split</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="debit-split" id="debit-split" placeholder="e.g. 50">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="form-group">
-                <label for="mmsc">MMSC</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="mmsc">£</label>
-                  </div>
-                  <select class="custom-select" id="mmsc" name="mmsc">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="auth-fee">Auth Fee</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="auth-fee">£ / €</label>
-                  </div>
-                  <select class="custom-select" id="auth-fee" name="auth-fee">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="pci-mngmt">PCI Management</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="pci-mngmt">£</label>
-                  </div>
-                  <select class="custom-select" id="pci-mngmt" name="pci-mngmt">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-
-            </section>
-
-            <hr>
-
-            <section>
-
-              <div class="form-group">
-                <label for="contract-length">Contract Length</label>
-                <select name="contract-length" id="contract-length" class="form-control">
-                  <option value="12">12 months</option>
-                  <option value="24">24 months</option>
-                  <option value="36">36 months</option>
-                  <option value="48">48 months</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="contract-type">Contract Type</label>
-                <select name="contract-type" id="contract-type" class="form-control">
-                  <option value="desktop">Desktop</option>
-                  <option value="bluetooth">Bluetooth</option>
-                  <option value="gprs">GPRS</option>
-                  <option value="mid">MID only</option>
-                </select>
-              </div>
-
-            </section>
-
-            <hr>
-
-            <section>
-              <div class="form-group">
-                <div>
-                  <label>Cashback</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="cashback-yes" name="cashback" class="custom-control-input">
-                  <label class="custom-control-label" for="cashback-yes">Yes</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="cashback-no" name="cashback" class="custom-control-input">
-                  <label class="custom-control-label" for="cashback-no">No</label>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="form-group">
-                <div>
-                  <label>Gratuities</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="gratuities-yes" name="gratuities" class="custom-control-input">
-                  <label class="custom-control-label" for="gratuities-yes">Yes</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="gratuities-no" name="gratuities" class="custom-control-input">
-                  <label class="custom-control-label" for="gratuities-no">No</label>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="form-group">
-                <div>
-                  <label>Pre Auth</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="preauth-yes" name="preauth" class="custom-control-input">
-                  <label class="custom-control-label" for="preauth-yes">Yes</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="preauth-no" name="preauth" class="custom-control-input">
-                  <label class="custom-control-label" for="preauth-no">No</label>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="form-group">
-                <div>
-                  <label>Install Type</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="install-type-self" name="install-type" class="custom-control-input">
-                  <label class="custom-control-label" for="install-type-self">Self-install</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="install-type-courier" name="install-type" class="custom-control-input">
-                  <label class="custom-control-label" for="install-type-courier">Courier</label>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="form-group">
-                <label for="install-cost">Install Cost</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">£</span>
-                  </div>
-                  <input readonly type="text" class="form-control" name="install-cost" id="install-cost">
                 </div>
               </div>
             </section>
 
-            <hr>
+            <hr class="l">
 
             <section>
-              <div class="form-group">
-                <label for="amex-holder">AMEX</label>
-                <select name="amex-holder" id="amex-holder" class="form-control">
-                  <option disabled selected>Choose an option</option>
-                  <option value="amex-yes">Yes</option>
-                  <option value="amex-no">No</option>
-                  <option value="amex-existing">Existing</option>
-                </select>
-              </div>
+              <h5>Rates</h5>
 
-              <hr>
-
-              <div class="form-group">
-                <div>
-                  <label>JCB</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="jcb-yes" name="jcb" class="custom-control-input">
-                  <label class="custom-control-label" for="jcb-yes">Yes</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="jcb-no" name="jcb" class="custom-control-input">
-                  <label class="custom-control-label" for="jcb-no">No</label>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="form-group">
-                <div>
-                  <label>Union Pay</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="union-yes" name="union" class="custom-control-input">
-                  <label class="custom-control-label" for="union-yes">Yes</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="union-no" name="union" class="custom-control-input">
-                  <label class="custom-control-label" for="union-no">No</label>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="form-group">
-                <label for="till-rolls">Till Rolls</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="till-rolls">£</label>
+              <div class="row">
+                <div class="col-md-3 col-lg-3">
+                  <div class="form-group">
+                    <label for="credit-card-rate">Credit Card <br class="d-none d-md-block">Rate</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="credit-card-rate" id="credit-card-rate">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                    <small class="text-muted">Placeholder</small>
                   </div>
-                  <select class="custom-select" id="till-rolls" name="till-rolls">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                  <div class="form-group">
+                    <label for="debit-card-rate">Debit Card <br class="d-none d-md-block">Rate</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="debit-card-rate" id="debit-card-rate">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                    <small class="text-muted">Placeholder</small>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                  <div class="form-group">
+                    <label for="corp-credit-rate">Corporate <br class="d-none d-md-block"> Credit Rate</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="corp-credit-rate" id="corp-credit-rate">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                    <small class="text-muted">Placeholder</small>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                  <div class="form-group">
+                    <label for="corp-debit-rate">Corporate <br class="d-none d-md-block"> Debit Rate</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="corp-debit-rate" id="corp-debit-rate">
+                      <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                      </div>
+                    </div>
+                    <small class="text-muted">Placeholder</small>
+                  </div>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="mca">MCA</label>
-                <select name="mca" id="mca" class="form-control">
-                  <option disabled selected>Choose an option</option>
-                  <option value="mca-yes">Yes</option>
-                  <option value="mca-no">No</option>
-                  <option value="mca-later">Send me info in 4 months time</option>
-                </select>
+              <hr class="l">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="mmsc">MMSC</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="mmsc">£</label>
+                      </div>
+                      <select class="custom-select" id="mmsc" name="mmsc">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="auth-fee">Auth Fee</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="auth-fee">£ / €</label>
+                      </div>
+                      <select class="custom-select" id="auth-fee" name="auth-fee">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="pci-mngmt">PCI Management</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="pci-mngmt">£</label>
+                      </div>
+                      <select class="custom-select" id="pci-mngmt" name="pci-mngmt">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <hr>
+            </section>
 
-              <div class="form-group">
-                <div>
-                  <label>SecurePro</label>
+            <hr class="l">
+
+            <section>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="contract-length">Contract Length</label>
+                    <select name="contract-length" id="contract-length" class="form-control">
+                      <option value="12">12 months</option>
+                      <option value="24">24 months</option>
+                      <option value="36">36 months</option>
+                      <option value="48">48 months</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="securepro-yes" name="securepro" class="custom-control-input">
-                  <label class="custom-control-label" for="securepro-yes">Yes</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="securepro-no" name="securepro" class="custom-control-input">
-                  <label class="custom-control-label" for="securepro-no">No</label>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="contract-type">Contract Type</label>
+                    <select name="contract-type" id="contract-type" class="form-control">
+                      <option value="desktop">Desktop</option>
+                      <option value="bluetooth">Bluetooth</option>
+                      <option value="gprs">GPRS</option>
+                      <option value="mid">MID only</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
-              <hr>
+            </section>
 
-              <div class="form-group">
-                <div>
-                  <label>DCC</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="dcc-yes" name="dcc" class="custom-control-input">
-                  <label class="custom-control-label" for="dcc-yes">Yes</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="dcc-no" name="dcc" class="custom-control-input">
-                  <label class="custom-control-label" for="dcc-no">No</label>
-                </div>
-              </div>
+            <hr class="l">
 
-              <hr>
+            <section>
 
-              <div class="form-group">
-                <div>
-                  <label>Reporting</label>
+              <div class="row">
+                <div class="col-md-6 col-lg-5">
+                  <div class="form-group">
+                    <div>
+                      <label>Cashback</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="cashback-yes" name="cashback" class="custom-control-input">
+                      <label class="custom-control-label" for="cashback-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="cashback-no" name="cashback" class="custom-control-input">
+                      <label class="custom-control-label" for="cashback-no">No</label>
+                    </div>
+                  </div>
                 </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="reporting-basic" name="reporting" class="custom-control-input">
-                  <label class="custom-control-label" for="reporting-basic">Basic</label>
+
+                <div class="col-md-6 col-lg-5">
+                  <div class="form-group">
+                    <div>
+                      <label>Gratuities</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="gratuities-yes" name="gratuities" class="custom-control-input">
+                      <label class="custom-control-label" for="gratuities-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="gratuities-no" name="gratuities" class="custom-control-input">
+                      <label class="custom-control-label" for="gratuities-no">No</label>
+                    </div>
+                  </div>
                 </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="reporting-pro" name="reporting" class="custom-control-input">
-                  <label class="custom-control-label" for="reporting-pro">Pro</label>
+
+                <div class="w-100"></div>
+
+                <div class="col-md-6 col-lg-5">
+                  <div class="form-group">
+                    <div>
+                      <label>Pre Auth</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="preauth-yes" name="preauth" class="custom-control-input">
+                      <label class="custom-control-label" for="preauth-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="preauth-no" name="preauth" class="custom-control-input">
+                      <label class="custom-control-label" for="preauth-no">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <div>
+                      <label>Install Type</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="install-type-self" name="install-type" class="custom-control-input">
+                      <label class="custom-control-label" for="install-type-self">Self-install</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="install-type-courier" name="install-type" class="custom-control-input">
+                      <label class="custom-control-label" for="install-type-courier">Courier</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-5">
+                  <div class="form-group">
+                    <label for="install-cost">Install Cost</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">£</span>
+                      </div>
+                      <input readonly type="text" class="form-control" name="install-cost" id="install-cost">
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <hr>
+            <hr class="l">
 
-            <section class="buttons">
-              <div class="form-group d-flex justify-content-between">
-                <button type="button" class="btn btn-secondary">Save Quote</button>
-                <button type="button" class="btn btn-primary">Start Application</button>
+            <section>
+
+              <div class="row">
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                  <div class="form-group">
+                    <label for="amex-holder">AMEX</label>
+                    <select name="amex-holder" id="amex-holder" class="form-control">
+                      <option disabled selected>Choose an option</option>
+                      <option value="amex-yes">Yes</option>
+                      <option value="amex-no">No</option>
+                      <option value="amex-existing">Existing</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="form-group">
+                    <div>
+                      <label>JCB</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jcb-yes" name="jcb" class="custom-control-input">
+                      <label class="custom-control-label" for="jcb-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="jcb-no" name="jcb" class="custom-control-input">
+                      <label class="custom-control-label" for="jcb-no">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="form-group">
+                    <div>
+                      <label>Union Pay</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="union-yes" name="union" class="custom-control-input">
+                      <label class="custom-control-label" for="union-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="union-no" name="union" class="custom-control-input">
+                      <label class="custom-control-label" for="union-no">No</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="l">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="till-rolls">Till Rolls</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="till-rolls">£</label>
+                      </div>
+                      <select class="custom-select" id="till-rolls" name="till-rolls">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="mca">MCA</label>
+                    <select name="mca" id="mca" class="form-control">
+                      <option disabled selected>Choose an option</option>
+                      <option value="mca-yes">Yes</option>
+                      <option value="mca-no">No</option>
+                      <option value="mca-later">Send me info in 4 months time</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <div>
+                      <label>SecurePro</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="securepro-yes" name="securepro" class="custom-control-input">
+                      <label class="custom-control-label" for="securepro-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="securepro-no" name="securepro" class="custom-control-input">
+                      <label class="custom-control-label" for="securepro-no">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <div>
+                      <label>DCC</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="dcc-yes" name="dcc" class="custom-control-input">
+                      <label class="custom-control-label" for="dcc-yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="dcc-no" name="dcc" class="custom-control-input">
+                      <label class="custom-control-label" for="dcc-no">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <div>
+                      <label>Reporting</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="reporting-basic" name="reporting" class="custom-control-input">
+                      <label class="custom-control-label" for="reporting-basic">Basic</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="reporting-pro" name="reporting" class="custom-control-input">
+                      <label class="custom-control-label" for="reporting-pro">Pro</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+            <hr class="l">
+
+            <section class="buttons mb-3">
+              <div class="row">
+                <div class="col-md-6 my-3">
+                  <button type="button" class="btn btn-secondary btn-block js-btn-quote-save" data-toggle="modal" data-target="#js-save-quote">
+                    <i class="far fa-save mr-1"></i>
+                    <span>Save as a new Quote</span>
+                  </button>
+                </div>
+                <div class="col-md-6 my-3">
+                  <a href="./../legal-entity-form.with-js.html" class="btn btn-primary btn-block">
+                    <span>Start Application</span>
+                    <i class="fas fa-angle-double-right"></i>
+                  </a>
+                </div>
               </div>
             </section>
           </div>
@@ -461,7 +563,79 @@
     </div>
   </div>
 
+  <div aria-hidden="true" aria-labelledby="save-quote" class="modal fade" id="js-save-quote" role="dialog"
+    tabindex="-1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4>Save as a new quote</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form class="js-new-quote-form">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="quote-name">Type a name for this quote</label>
+              <input type="text" name="quote-name" id="quote-name" class="form-control js-new-quote-name" required>
+            </div>
+
+            <p>Would you like to keep the data you have entered for a new quote?</p>
+            <p>If selected, you will have the opportunity to create a new quote using the same data.</p>
+            <div class="custom-control custom-checkbox">
+              <input checked class="custom-control-input js-new-quote-keep" id="quote-keep-data" name="quote-keep-data" type="checkbox">
+              <label class="custom-control-label" for="quote-keep-data">Keep form data for a new quote</label>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Cancel">Cancel</button>
+            <button type="submit" class="btn btn-primary js-save-quote-submit">Save Quote</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="./../../dist/js/vendor.js"></script>
+
+  <script>
+    $(function () {
+      const $alertQuoteSaved = $('.js-saved-alert');
+      const $alertQuoteSavedCloseBtn = $alertQuoteSaved.find('.js-saved-alert-close');
+      const $alertQuoteSavedName = $alertQuoteSaved.find('.js-saved-alert-name');
+
+      const $newQuoteModal = $('#js-save-quote');
+      const $newQuoteForm = $newQuoteModal.find('.js-new-quote-form');
+      const $newQuoteName = $newQuoteModal.find('.js-new-quote-name');
+      const $newQuoteKeep = $newQuoteModal.find('.js-new-quote-keep');
+
+      $newQuoteModal.on('submit', 'form', function (evt) {
+        if ($newQuoteKeep.is(':checked') && $newQuoteName.is(':valid')) {
+          // prevent the form's default action, as we want to keep the data
+          evt.preventDefault();
+
+          // quote would need to be posted to the API here
+
+          // close the modal
+          $newQuoteModal.modal('hide');
+
+          // display alert
+          $alertQuoteSavedName.text($newQuoteName.val());
+          $alertQuoteSaved.removeClass('d-none').focus();
+
+          // scroll to top of page
+          // only way I could get this to work, after much debugging
+          setTimeout(() => {
+            $('html,body').scrollTop(0);
+          }, 500);
+        } else {
+          // either post to the API in JS, or allow the form to submit by itself
+          // $newQuoteForm.submit();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
