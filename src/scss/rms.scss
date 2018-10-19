@@ -85,6 +85,20 @@ label:not(.custom-control-label) {
 }
 
 /*
+ * Pseudo element for sort code input
+ * Adds a dash after the column
+ * Can only be applied to non-input elements
+ */
+
+.col-dash-after:after {
+  content: '-';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -3px;
+}
+
+/*
  * Sticky sidebar nav
  */
 

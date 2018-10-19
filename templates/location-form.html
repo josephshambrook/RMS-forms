@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <title>RMS - Location Form</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    rel="stylesheet">
+  <link href="./../src/vendor/select2-4.0.5.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="./../dist/css/rms.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="navbar-brand"><img alt="Retail Merchant Services" src="https://www.retailmerchantservices.co.uk/media/2015/rms-logo-svg.svg"
+        width="120"></div>
+  </nav>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-3">
+        Sidebar
+      </div>
+
+      <div class="col-12 col-md-9">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <ul class="pagination pagination-steps has-titles">
+              <li class="page-item page-item-complete">
+                <span class="page-item-title">
+                  Legal
+                </span>
+                <a class="page-link" href="./legal-entity-form.with-js.html">
+                  <i class="fas fa-check-circle"></i>
+                </a>
+              </li>
+              <li class="page-item page-item-incomplete">
+                <span class="page-item-title">
+                  Principal
+                </span>
+                <a class="page-link" href="./principal-form-registered.html">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </a>
+              </li>
+              <li class="page-item active">
+                <span class="page-item-title">
+                  Location
+                </span>
+                <a class="page-link" href="./location-form.html">3</a>
+              </li>
+              <li class="page-item">
+                <span class="page-item-title">
+                  Signature
+                </span>
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <span class="page-item-title">
+                  Review
+                </span>
+                <a class="page-link" href="#">5</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h1 class="mt-1 mb-3">Location</h1>
+
+        <div class="row">
+          <div class="col-12 col-lg-8 pb-3">
+            <form>
+              <div class="form-group">
+                <label for="selected-quote">Select a quote</label>
+                <select class="js-select2" id="selected-quote" name="selected-quote">
+                  <option value="quote-1">Quote 1</option>
+                  <option value="quote-2">Quote 2</option>
+                  <option value="quote-3">Quote 3</option>
+                </select>
+              </div>
+
+              <hr class="m">
+
+              <section class="choose-seller">
+                <div class="alert alert-info">
+                  This would show if the request to Creditsafe returns a result
+                </div>
+
+                <div class="form-group">
+                  <label for="selected-quote">Select a seller</label>
+                  <select class="js-selected-seller js-select2" id="selected-seller" name="selected-seller">
+                    <option value="seller-1">Seller 1</option>
+                    <option value="seller-2">Seller 2</option>
+                    <option value="seller-3">Seller 3</option>
+                  </select>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="business-details">
+                <h3>Business Details</h3>
+
+                <div class="form-group">
+                  <label for="business-name">Business Name</label>
+                  <input type="text" name="business-name" id="business-name" class="form-control" placeholder="e.g. ABC Inc.">
+                </div>
+
+                <div class="form-group">
+                  <label for="business-email">Business Email</label>
+                  <input type="text" name="business-email" id="business-email" class="form-control" placeholder="e.g. business@abc.com">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-phone-no">Business Phone Number</label>
+                      <input type="text" name="business-phone-no" id="business-phone-no" class="form-control" placeholder="e.g. 020 8598 1234">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-mobile-no">Business Mobile Number</label>
+                      <input type="text" name="business-mobile-no" id="business-mobile-no" class="form-control" placeholder="e.g. 07500 123123">
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="business-address-postcode">Postcode:</label>
+                  <input class="form-control" id="business-address-postcode" name="business-address-postcode" placeholder="e.g. W4 1NX" type="text">
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary" type="button">Lookup Postcode</button>
+                </div>
+
+                <div class="form-group">
+                  <label for="business-address-line-1">Address:</label>
+                  <input class="form-control" id="business-address-line-1" name="business-address-line-1" type="text" placeholder="e.g. Floor 2">
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control" id="business-address-line-2" name="business-address-line-2" type="text" placeholder="e.g. 100 London Street">
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="business-address-city">City:</label>
+                      <input class="form-control" id="business-address-city" name="business-address-city" type="text" placeholder="London">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="business-address-country">Country</label>
+                      <input type="text" readonly class="form-control-plaintext" id="business-address-country" value="United Kingdom">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input js-business-terminal-delivery-check" id="business-terminal-delivery-check" type="checkbox" checked disabled>
+                    <label class="custom-control-label" for="business-terminal-delivery-check">I confirm that the terminal can be delivered here</label>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="delivery-set-date">
+                <h3>Delivery instructions</h3>
+
+                <div class="alert alert-info">
+                  This section would show if <strong>self-install</strong> was selected in the Principal form
+                </div>
+
+                <div class="form-group">
+                  <label for="delivery-name">Name</label>
+                  <input type="text" name="delivery-name" id="delivery-name" class="form-control" value="Justin Case">
+                </div>
+
+                <div class="form-group">
+                  <label for="delivery-phone-no">Phone Number</label>
+                  <input type="text" name="delivery-phone-no" id="delivery-phone-no" class="form-control" value="07500 123123">
+                </div>
+
+                <div class="form-group">
+                  <label for="delivery-date">Delivery date</label>
+                  <input type="date" name="delivery-date" id="delivery-date" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label>Delivery time</label>
+
+                  <div class="row">
+                    <div class="col-6 col-md-4">
+                      <div class="custom-control custom-radio">
+                        <input checked class="custom-control-input" id="delivery-time-1" name="delivery-time" type="radio" value="delivery-time-1">
+                        <label class="custom-control-label" for="delivery-time-1">
+                          <time>07:00</time> to <time>10:00</time>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" id="delivery-time-2" name="delivery-time" type="radio" value="delivery-time-2">
+                        <label class="custom-control-label" for="delivery-time-2">
+                          <time>10:00</time> to <time>13:00</time>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-6 col-md-4">
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" id="delivery-time-3" name="delivery-time" type="radio" value="delivery-time-3">
+                        <label class="custom-control-label" for="delivery-time-3">
+                          <time>13:00</time> to <time>16:00</time>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" id="delivery-time-4" name="delivery-time" type="radio" value="delivery-time-4">
+                        <label class="custom-control-label" for="delivery-time-4">
+                            <time>16:00</time> to <time>19:00</time>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="delivery-instructions">Do we need additional instructions to find this address?</label>
+                  <textarea name="delivery-instructions" id="delivery-instructions" class="form-control" rows="2"></textarea>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="creditsafe-unregistered">
+                <div class="alert alert-info">
+                  This section would show if the business is not registered on Creditsafe
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="business-description">
+                <div class="form-group">
+                  <label for="business-description">Please provide a brief description of the business</label>
+                  <textarea name="business-description" id="business-description" class="form-control" rows="3"></textarea>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="business-bank-details-uk">
+                <div class="alert alert-info">
+                  These bank detail fields would show if this is a UK business
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-bank-name">Bank Name</label>
+                      <input type="text" name="business-bank-name" id="business-bank-name" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-account-name">Account Name</label>
+                      <input type="text" name="business-account-name" id="business-account-name" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="business-sort-code-1">Sort Code</label>
+                    <input type="hidden" name="business-sort-code">
+                    <div class="row">
+                      <div class="col form-group col-dash-after">
+                        <input type="text" class="form-control" name="business-sort-code-1" id="business-sort-code-1">
+                      </div>
+                      <div class="col form-group col-dash-after">
+                        <input type="text" class="form-control" name="business-sort-code-2" id="business-sort-code-2">
+                      </div>
+                      <div class="col form-group">
+                        <input type="text" class="form-control" name="business-sort-code-3" id="business-sort-code-3">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-account-number">Account Number</label>
+                      <input type="text" name="business-account-number" id="business-account-number" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="business-bank-details-roi">
+                <div class="alert alert-info">
+                  These bank detail fields would show if this is a ROI business
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-bank-name">Bank Name</label>
+                      <input type="text" name="business-bank-name" id="business-bank-name" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-account-name">Account Name</label>
+                      <input type="text" name="business-account-name" id="business-account-name" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-account-swift">SWIFT</label>
+                      <input type="text" name="business-account-swift" id="business-account-swift" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-account-iban">IBAN</label>
+                      <input type="text" name="business-account-iban" id="business-account-iban" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="cp-flow">
+                <div class="alert alert-info">
+                  This is detailing the flow if C&P was the chosen product for the quote
+                </div>
+
+                <div class="form-group">
+                  <label for="phone-payments-taken">Percentage of payments taken over the phone</label>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="phone-payments-taken" id="phone-payments-taken" placeholder="e.g. 10">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="advance">
+                <div class="form-group">
+                  <div>
+                    <label>Do you take payments in advance?</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="advance-payments-yes" name="advance-payments" class="custom-control-input" value="yes">
+                    <label class="custom-control-label" for="advance-payments-yes">Yes</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="advance-payments-no" name="advance-payments" class="custom-control-input" value="no">
+                    <label class="custom-control-label" for="advance-payments-no">No</label>
+                  </div>
+                </div>
+              </section>
+
+              <section class="advance-questions d-none">
+                <div class="form-group">
+                  <label for="advance-payments-total-turnover">What percentage of total turnover relates to payments in advance?</label>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="advance-payments-total-turnover" id="advance-payments-total-turnover" placeholder="e.g. 10">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="advance-payments-days">How far in advance are payments taken?</label>
+                  <div class="row">
+                    <div class="col-md-6 mb-2 mb-md-0">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="advance-payments-months" id="advance-payments-months" placeholder="e.g. 1">
+                        <div class="input-group-append">
+                          <span class="input-group-text">months</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="advance-payments-days" id="advance-payments-days" placeholder="e.g. 10">
+                        <div class="input-group-append">
+                          <span class="input-group-text">days</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="deposits">
+                <div class="form-group">
+                  <div>
+                    <label>Do you take deposits?</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="deposits-yes" name="deposits" class="custom-control-input" value="yes">
+                    <label class="custom-control-label" for="deposits-yes">Yes</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="deposits-no" name="deposits" class="custom-control-input" value="no">
+                    <label class="custom-control-label" for="deposits-no">No</label>
+                  </div>
+                </div>
+              </section>
+
+              <section class="deposits-questions d-none">
+                <div class="form-group">
+                  <label for="deposits-total-turnover">What percentage of total turnover relates to deposits?</label>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="deposits-total-turnover" id="deposits-total-turnover" placeholder="e.g. 10">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="deposits-days">How far in advance are deposits taken?</label>
+                  <div class="row">
+                    <div class="col-md-6 mb-2 mb-md-0">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="deposits-months" id="deposits-months" placeholder="e.g. 1">
+                        <div class="input-group-append">
+                          <span class="input-group-text">months</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-2 mb-md-0">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="deposits-days" id="deposits-days" placeholder="e.g. 10">
+                        <div class="input-group-append">
+                          <span class="input-group-text">days</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="deposits-total-value">What percentage of total value is taken as a deposit?</label>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="deposits-total-value" id="deposits-total-value" placeholder="e.g. 10">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section>
+                <div class="form-group">
+                  <div>
+                    <label>Do you take recurring transactions?</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="recurring-transactions-yes" name="recurring-transactions" class="custom-control-input" value="yes">
+                    <label class="custom-control-label" for="recurring-transactions-yes">Yes</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="recurring-transactions-no" name="recurring-transactions" class="custom-control-input" value="no">
+                    <label class="custom-control-label" for="recurring-transactions-no">No</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div>
+                    <label>Do you trade seasonally?</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="seasonal-transactions-yes" name="seasonal-transactions" class="custom-control-input" value="yes">
+                    <label class="custom-control-label" for="seasonal-transactions-yes">Yes</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="seasonal-transactions-no" name="seasonal-transactions" class="custom-control-input" value="no">
+                    <label class="custom-control-label" for="seasonal-transactions-no">No</label>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="mcc-conditional-questions">
+                <div class="alert alert-info">
+                  This section contains conditional questions based on the results of MCC. Here's a couple of examples
+                </div>
+
+                <div class="form-group">
+                  <label for="card-turnover-deposits">What percentage of card turnover relates to deposits?</label>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                          <input type="text" name="card-turnover-deposits" id="card-turnover-deposits" class="form-control" placeholder="e.g. 10">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="current-acquirer-statements">Please attach the last 6 months current acquirer statements</label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="current-acquirer-statements">
+                    <label class="custom-file-label" for="current-acquirer-statements">Choose file</label>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <section class="additionals">
+                <div class="form-group">
+                  <label for="notes">Notes</label>
+                  <textarea name="notes" id="notes" rows="3" class="form-control"></textarea>
+                </div>
+              </section>
+
+              <hr class="m">
+
+              <a href="#" class="btn btn-secondary btn-block">
+                <i class="fas fa-plus mr-1"></i>
+                <span>Add new location</span>
+              </a>
+
+              <hr class="m">
+
+              <button class="btn btn-primary btn-block" type="submit">Next</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./../dist/js/vendor.js"></script>
+
+  <script>
+    $(function() {
+      // trigger select2 automatically for these dropdowns
+      $('.js-select2').select2({
+        width: '100%'
+      });
+
+      const cpFlow = $('.cp-flow');
+      const cpFlowAdvanceQuestions = $('.cp-flow-advance-questions');
+      const cpFlowDepositsQuestions = $('.cp-flow-deposits-questions');
+
+      cpFlow.on('change', '[name="advance-payments"]', function() {
+        if ($('[name="advance-payments"]:checked').val() === 'yes') {
+          cpFlowAdvanceQuestions.removeClass('d-none');
+        } else {
+          cpFlowAdvanceQuestions.addClass('d-none');
+        }
+      });
+
+      cpFlow.on('change', '[name="deposits"]', function() {
+        if ($('[name="deposits"]:checked').val() === 'yes') {
+          cpFlowDepositsQuestions.removeClass('d-none');
+        } else {
+          cpFlowDepositsQuestions.addClass('d-none');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
