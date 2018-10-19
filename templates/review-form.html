@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <title>RMS - Review</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    rel="stylesheet">
+  <link href="./../src/vendor/select2-4.0.5.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="./../dist/css/rms.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="navbar-brand"><img alt="Retail Merchant Services" src="https://www.retailmerchantservices.co.uk/media/2015/rms-logo-svg.svg"
+        width="120"></div>
+  </nav>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-3">
+        Sidebar
+      </div>
+
+      <div class="col-12 col-md-9">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <ul class="pagination pagination-steps has-titles">
+              <li class="page-item page-item-complete">
+                <span class="page-item-title">
+                  Legal
+                </span>
+                <a class="page-link" href="./legal-entity-form.with-js.html">
+                  <i class="fas fa-check-circle"></i>
+                </a>
+              </li>
+              <li class="page-item page-item-incomplete">
+                <span class="page-item-title">
+                  Principal
+                </span>
+                <a class="page-link" href="./principal-form-registered.html">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </a>
+              </li>
+              <li class="page-item page-item-complete">
+                <span class="page-item-title">
+                  Location
+                </span>
+                <a class="page-link" href="./location-form.html">
+                  <i class="fas fa-check-circle"></i>
+                </a>
+              </li>
+              <li class="page-item active">
+                <span class="page-item-title">
+                  Review
+                </span>
+                <a class="page-link" href="./review-form.html">4</a>
+              </li>
+              <li class="page-item">
+                <span class="page-item-title">
+                  Signature
+                </span>
+                <a class="page-link" href="./signature-form.html">5</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h1 class="mt-1 mb-3">Review</h1>
+
+        <div class="row">
+          <div class="col-12 col-lg-8 pb-3">
+            <div class="alert alert-incomplete">
+              <h4 class="alert-heading">You have missing information</h4>
+              <p class="mb-0">You have left incomplete information on the previous steps, which you will need to correct before proceeding.</p>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-header">
+                <h4>
+                  Legal
+                  <i class="fas fa-check-circle text-success ml-1"></i>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p class="card-text">You have completed this step, but you are able to go back and edit some details if you need to.</p>
+                <a href="./legal-entity-form.with-js.html" class="btn btn-light">
+                  <i class="fas fa-edit mr-1"></i>
+                  Edit step
+                </a>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-header">
+                <h4>
+                  Principal
+                  <i class="fas fa-exclamation-triangle text-incomplete ml-1"></i>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p class="card-text">You have <strong class="text-incomplete">incomplete</strong> information to add on this step. The information you will need to provide is:</p>
+                <ul>
+                  <li>Business Address</li>
+                  <li>Business Phone Number</li>
+                </ul>
+                <a href="./principal-form-registered.html" class="btn btn-incomplete text-white">
+                  <i class="fas fa-edit mr-1"></i>
+                  Edit step
+                </a>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-header">
+                <h4>
+                  Location
+                  <i class="fas fa-check-circle text-success ml-1"></i>
+                </h4>
+              </div>
+              <div class="card-body">
+                <p class="card-text">You have completed this step, but you are able to go back and edit some details if you need to.</p>
+                <a href="./location-form.html" class="btn btn-light">
+                  <i class="fas fa-edit mr-1"></i>
+                  Edit step
+                </a>
+              </div>
+            </div>
+
+            <hr class="m">
+
+            <a href="./signature-form.html" class="btn btn-primary btn-block">Continue to Signature</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

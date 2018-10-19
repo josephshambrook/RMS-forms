@@ -3,9 +3,11 @@
  */
 
 $color-rms: #8E3233;
+$color-incomplete: #fd7e14;
 
 $theme-colors: (
-  "primary": $color-rms
+  "primary": $color-rms,
+  "incomplete": $color-incomplete
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
@@ -181,8 +183,8 @@ label:not(.custom-control-label) {
   }
 
   .page-item-incomplete .page-link {
-    background-color: $orange;
-    border-color: $orange;
+    background-color: $color-incomplete;
+    border-color: $color-incomplete;
     color: #fff;
   }
 
