@@ -51,12 +51,13 @@
 
               <hr class="invisible">
 
+              <h5>Search <small class="text-muted">by Business Name or Postcode</small></h5>
+
               <div class="form-group">
-                <label for="business-description-search">Business Description Search:</label>
                 <select class="js-description-search" id="business-description-search" name="business-description-search"></select>
               </div>
 
-              <hr>
+              <hr class="invisible">
 
               <div class="card mb-3">
                 <div class="card-header">
@@ -67,9 +68,35 @@
                 </div>
 
                 <div class="card-body">
-                  <p class="card-text"></p>
+                  <p class="card-text">This is regarded as low risk.</p>
                 </div>
               </div>
+
+              <div class="card mb-3">
+                  <div class="card-header">
+                    <h4>
+                      <span class="badge badge-warning">High risk</span>
+                      <span class="category">3913 - Beer tasting</span>
+                    </h4>
+                  </div>
+
+                  <div class="card-body">
+                    <p class="card-text">This is regarded as high risk.</p>
+                  </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                      <h4>
+                        <span class="badge badge-danger">Prohibited</span>
+                        <span class="category">3913 - Beer tasting</span>
+                      </h4>
+                    </div>
+
+                    <div class="card-body">
+                      <p class="card-text">This is regarded as prohibited.</p>
+                    </div>
+                  </div>
             </div>
           </div>
         </main>
