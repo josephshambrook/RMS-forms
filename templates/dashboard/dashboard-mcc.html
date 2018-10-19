@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Select2 Demos</title>
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    rel="stylesheet">
+    <link href="./../../src/vendor/select2-4.0.5.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./../../dist/css/rms.css" media="screen" rel="stylesheet" type="text/css">
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary sticky-top">
+      <div class="navbar-brand">
+        <img alt="Retail Merchant Services" src="https://eapp.rms-secure.com:3939/images/img/logo.png" width="160">
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dashboard-menu-toggle" aria-controls="dashboard-menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars text-white"></i>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="dashboard-menu-toggle">
+        <div class="text-light ml-auto">
+          <i class="fas fa-user-shield"></i>
+          <span class="navbar-text mr-2">
+            Logged in as Mark Johnson
+          </span>
+          <a href="#" class="btn btn-light">Sign out</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <aside class="col-12 col-md-3">
+          <nav class="nav nav-pills nav-sidebar-sticky flex-column bg-light">
+            <a class="nav-item nav-link" href="./dashboard-appointments.html">Appointments</a>
+            <a class="nav-item nav-link" href="#">Applications <span class="badge badge-warning">2</span></a>
+            <a class="nav-item nav-link active" href="./dashboard-mcc.html">MCC Search</a>
+            <a class="nav-item nav-link" href="./dashboard-quote.html">Create Quote</a>
+            <a class="nav-item nav-link" href="#">Previous Quotes</a>
+          </nav>
+        </aside>
+
+        <main class="col-12 col-md-9">
+          <div class="row">
+            <div class="col-12 col-lg-10">
+              <h3>MCC Checker</h3>
+
+              <hr class="invisible">
+
+              <div class="form-group">
+                <label for="business-description-search">Business Description Search:</label>
+                <select class="js-description-search" id="business-description-search" name="business-description-search"></select>
+              </div>
+
+              <hr>
+
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h4>
+                    <span class="badge badge-success">Low risk</span>
+                    <span class="category">3913 - Beer tasting</span>
+                  </h4>
+                </div>
+
+                <div class="card-body">
+                  <p class="card-text"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+  <script src="./../../dist/js/vendor.js"></script>
+  <script>
+    const data = [
+      {
+        "category": "3913 - Beer tasting",
+        "riskLevel": 1,
+        "message": "This is low risk"
+      },
+      {
+        "category": "4106 - Design agency",
+        "riskLevel": 2,
+        "message": "This is high risk"
+      },
+      {
+        "category": "4501 - Bedding shops",
+        "riskLevel": 3,
+        "message": "This is prohibited"
+      }
+    ];
+
+    const risks = [
+      {
+        "colorClass": "success",
+        description: "Low risk",
+        level: 1
+      },
+      {
+        "colorClass": "warning",
+        "description": "High risk",
+        "level": 2
+      },
+      {
+        "colorClass": "danger",
+        "description": "Prohibited",
+        "level": 3
+      }
+    ]
+
+    const options = data.map((option, index) => ({ id: index, text: option.category }));
+
+    const optionTemplate = (item) => {
+      if (!item.id) {
+        return item.text;
+      }
+
+      const itemData = data[item.id];
+      const riskData = risks.find(risk => risk.level === itemData.riskLevel);
+
+      const icon = `<span class="badge badge-${riskData.colorClass}">${riskData.description}</span>`;
+
+      return $(`<span>${icon} ${item.text}</span>`);
+    }
+
+    $(function() {
+      const descriptionSearch = $('.js-description-search');
+
+      descriptionSearch.select2({
+        data: options,
+        templateResult: optionTemplate,
+        width: '100%'
+      });
+    });
+  </script>
+</body>
+</html>
