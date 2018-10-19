@@ -70,7 +70,7 @@
 
         <div class="row">
           <div class="col-12 col-lg-8 pb-3">
-            <form>
+            <form class="location-form">
               <div class="form-group">
                 <label for="selected-quote">Select a quote</label>
                 <select class="js-select2" id="selected-quote" name="selected-quote">
@@ -172,11 +172,11 @@
               <hr class="m">
 
               <section class="delivery-set-date">
-                <h3>Delivery instructions</h3>
-
                 <div class="alert alert-info">
                   This section would show if <strong>self-install</strong> was selected in the Principal form
                 </div>
+
+                <h3 class="mb-3">Delivery instructions</h3>
 
                 <div class="form-group">
                   <label for="delivery-name">Name</label>
@@ -263,6 +263,8 @@
                   These bank detail fields would show if this is a UK business
                 </div>
 
+                <h3 class="mb-3">Bank Details</h3>
+
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -306,6 +308,8 @@
                 <div class="alert alert-info">
                   These bank detail fields would show if this is a ROI business
                 </div>
+
+                <h3 class="mb-3">Bank Details</h3>
 
                 <div class="row">
                   <div class="col-md-6">
@@ -579,23 +583,23 @@
         width: '100%'
       });
 
-      const cpFlow = $('.cp-flow');
-      const cpFlowAdvanceQuestions = $('.cp-flow-advance-questions');
-      const cpFlowDepositsQuestions = $('.cp-flow-deposits-questions');
+      const locationForm = $('.location-form');
+      const advanceQuestions = $('.advance-questions');
+      const depositsQuestions = $('.deposits-questions');
 
-      cpFlow.on('change', '[name="advance-payments"]', function() {
+      locationForm.on('change', '[name="advance-payments"]', function() {
         if ($('[name="advance-payments"]:checked').val() === 'yes') {
-          cpFlowAdvanceQuestions.removeClass('d-none');
+          advanceQuestions.removeClass('d-none');
         } else {
-          cpFlowAdvanceQuestions.addClass('d-none');
+          advanceQuestions.addClass('d-none');
         }
       });
 
-      cpFlow.on('change', '[name="deposits"]', function() {
+      locationForm.on('change', '[name="deposits"]', function() {
         if ($('[name="deposits"]:checked').val() === 'yes') {
-          cpFlowDepositsQuestions.removeClass('d-none');
+          depositsQuestions.removeClass('d-none');
         } else {
-          cpFlowDepositsQuestions.addClass('d-none');
+          depositsQuestions.addClass('d-none');
         }
       });
     });
