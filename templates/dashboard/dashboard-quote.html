@@ -231,9 +231,9 @@
               </div>
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <label for="mmsc">MMSC Fee (per month)</label>
+                    <label for="mmsc">MMSC Fee <br>(per month)</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="mmsc">£</label>
@@ -248,9 +248,9 @@
                   </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <label for="auth-fee">Auth Fee (per transaction)</label>
+                    <label for="auth-fee">Auth Fee <br>(per transaction)</label>
                     <div class="input-group">
                       <select class="custom-select" id="auth-fee" name="auth-fee">
                         <option selected>Choose...</option>
@@ -266,9 +266,9 @@
                   </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <label for="pci-mngmt">PCI Management (per month)</label>
+                    <label for="pci-mngmt">PCI Management <br>(per month)</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="pci-mngmt">£</label>
@@ -283,6 +283,61 @@
                   </div>
                 </div>
               </div>
+
+              <div class="row">
+                  <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="form-group">
+                      <label for="amex-holder">AMEX</label>
+                      <select name="amex-holder" id="amex-holder" class="form-control js-amex-select">
+                        <option disabled selected>Choose an option</option>
+                        <option value="amex-yes">Yes</option>
+                        <option value="amex-no">No</option>
+                        <option value="amex-existing">Existing</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 js-amex-mid-field d-none">
+                    <div class="form-group">
+                      <label for="amex-mid">Please enter AMEX MID</label>
+                      <input type="text" name="amex-mid" id="amex-mid" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="w-100"></div>
+
+                  <div class="col-md-6 col-lg-4">
+                    <div class="form-group">
+                      <div>
+                        <label>JCB</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="jcb-yes" name="jcb" class="custom-control-input">
+                        <label class="custom-control-label" for="jcb-yes">Yes</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="jcb-no" name="jcb" class="custom-control-input">
+                        <label class="custom-control-label" for="jcb-no">No</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-4">
+                    <div class="form-group">
+                      <div>
+                        <label>Union Pay</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="union-yes" name="union" class="custom-control-input">
+                        <label class="custom-control-label" for="union-yes">Yes</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="union-no" name="union" class="custom-control-input">
+                        <label class="custom-control-label" for="union-no">No</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
             </section>
 
@@ -398,59 +453,6 @@
                         <span class="input-group-text">£</span>
                       </div>
                       <input readonly type="text" class="form-control" name="install-cost" id="install-cost">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <hr class="l">
-
-            <section>
-
-              <div class="row">
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                  <div class="form-group">
-                    <label for="amex-holder">AMEX</label>
-                    <select name="amex-holder" id="amex-holder" class="form-control">
-                      <option disabled selected>Choose an option</option>
-                      <option value="amex-yes">Yes</option>
-                      <option value="amex-no">No</option>
-                      <option value="amex-existing">Existing</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="w-100"></div>
-
-                <div class="col-md-6 col-lg-4">
-                  <div class="form-group">
-                    <div>
-                      <label>JCB</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="jcb-yes" name="jcb" class="custom-control-input">
-                      <label class="custom-control-label" for="jcb-yes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="jcb-no" name="jcb" class="custom-control-input">
-                      <label class="custom-control-label" for="jcb-no">No</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                  <div class="form-group">
-                    <div>
-                      <label>Union Pay</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="union-yes" name="union" class="custom-control-input">
-                      <label class="custom-control-label" for="union-yes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="union-no" name="union" class="custom-control-input">
-                      <label class="custom-control-label" for="union-no">No</label>
                     </div>
                   </div>
                 </div>
@@ -712,6 +714,16 @@
     // Other New Quote JS
 
     $(function () {
+      // AMEX field
+      $('.js-amex-select').on('change', function () {
+        if (this.value === 'amex-existing') {
+          $('.js-amex-mid-field').removeClass('d-none');
+        } else {
+          $('.js-amex-mid-field').addClass('d-none');
+        }
+      });
+
+      // Save Quote Modal
       const $alertQuoteSaved = $('.js-saved-alert');
       const $alertQuoteSavedCloseBtn = $alertQuoteSaved.find('.js-saved-alert-close');
       const $alertQuoteSavedName = $alertQuoteSaved.find('.js-saved-alert-name');
