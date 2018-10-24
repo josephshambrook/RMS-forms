@@ -232,6 +232,24 @@ label:not(.custom-control-label) {
 }
 
 /*
+ * Custom Element
+ * Dot version of badges
+ * For displaying a badge without text inside
+ */
+
+.badge.badge-dot {
+  // not thrilled with this line but only way to fix vertical alignment
+  margin-top: -3px;
+  padding: 0.25em;
+  vertical-align: middle;
+
+  // overwrite Bootstrap empty rule for badges
+  &:empty {
+    display: inline-block;
+  }
+ }
+
+/*
  * Basic re-styling of Select2 rendered boxes
  * Possible that not all scenarios covered, so may be some problems.
  */

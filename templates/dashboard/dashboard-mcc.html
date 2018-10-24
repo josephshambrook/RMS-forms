@@ -151,7 +151,7 @@
       const itemData = data[item.id];
       const riskData = risks.find(risk => risk.level === itemData.riskLevel);
 
-      const icon = `<span class="badge badge-${riskData.colorClass}">${riskData.description}</span>`;
+      const icon = `<span class="badge badge-dot badge-${riskData.colorClass}"></span>`;
 
       return $(`<span>${icon} ${item.text}</span>`);
     }

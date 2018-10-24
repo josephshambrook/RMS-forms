@@ -52,9 +52,12 @@
               </button>
             </div>
 
-            <h3>Create Quote</h3>
+            <h3>New Quote</h3>
+
+            <hr class="m">
 
             <section>
+              <h5>Merchant Profile</h5>
 
               <div class="row">
                 <div class="col-md-6">
@@ -83,11 +86,21 @@
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="settlement">Settlement</label>
+                    <label for="settlement">Settlement Time</label>
                     <select name="settlement" id="settlement" class="form-control">
                       <option value="same-day">Same Day - £2.95</option>
-                      <option value="faster">Faster</option>
+                      <option value="faster">Faster - £2.95 per month</option>
                       <option value="standard">Standard - £0.00</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="country">Country</label>
+                    <select name="country" id="country" class="form-control">
+                      <option value="same-day">UK</option>
+                      <option value="faster">ROI</option>
                     </select>
                   </div>
                 </div>
@@ -95,19 +108,22 @@
 
             </section>
 
-            <hr class="l">
-
             <section>
-              <h6>MCC Section</h6>
+              <div class="form-group">
+                <label for="mcc">MCC Search</label>
+                <select class="js-description-search" id="mcc" name="mcc"></select>
+              </div>
             </section>
 
             <hr class="l">
 
             <section>
+              <h5>Card Processing</h5>
+
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bto">BTO p/m</label>
+                    <label for="bto">BTO per month</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">£</span>
@@ -119,19 +135,7 @@
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="cto">CTO p/m</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">£</span>
-                      </div>
-                      <input type="text" class="form-control" name="cto" id="cto" placeholder="e.g. 100000">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="cto">CTO p/m</label>
+                    <label for="cto">CTO per month</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">£</span>
@@ -226,12 +230,10 @@
                 </div>
               </div>
 
-              <hr class="l">
-
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="mmsc">MMSC</label>
+                    <label for="mmsc">MMSC Fee (per month)</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="mmsc">£</label>
@@ -248,24 +250,25 @@
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="auth-fee">Auth Fee</label>
+                    <label for="auth-fee">Auth Fee (per transaction)</label>
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text" for="auth-fee">£ / €</label>
-                      </div>
                       <select class="custom-select" id="auth-fee" name="auth-fee">
                         <option selected>Choose...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                       </select>
+                      <div class="input-group-append">
+                        <!-- This would be cents in ROI -->
+                        <label class="input-group-text" for="auth-fee">p</label>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="pci-mngmt">PCI Management</label>
+                    <label for="pci-mngmt">PCI Management (per month)</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="pci-mngmt">£</label>
@@ -286,6 +289,7 @@
             <hr class="l">
 
             <section>
+              <h5>Hardware</h5>
 
               <div class="row">
                 <div class="col-md-6">
@@ -302,7 +306,7 @@
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="contract-type">Contract Type</label>
+                    <label for="contract-type">Terminal Type</label>
                     <select name="contract-type" id="contract-type" class="form-control">
                       <option value="desktop">Desktop</option>
                       <option value="bluetooth">Bluetooth</option>
@@ -451,8 +455,12 @@
                   </div>
                 </div>
               </div>
+            </section>
 
-              <hr class="l">
+            <hr class="l">
+
+            <section>
+              <h5>Value Add Services</h5>
 
               <div class="row">
                 <div class="col-md-6">
@@ -639,6 +647,70 @@
   <script src="./../../dist/js/vendor.js"></script>
 
   <script>
+    // MCC Search (copied from `dashboard-mcc.js`)
+    const data = [
+      {
+        "category": "3913 - Beer tasting",
+        "riskLevel": 1,
+        "message": "This is low risk"
+      },
+      {
+        "category": "4106 - Design agency",
+        "riskLevel": 2,
+        "message": "This is high risk"
+      },
+      {
+        "category": "4501 - Bedding shops",
+        "riskLevel": 3,
+        "message": "This is prohibited"
+      }
+    ];
+
+    const risks = [
+      {
+        "colorClass": "success",
+        description: "Low risk",
+        level: 1
+      },
+      {
+        "colorClass": "warning",
+        "description": "High risk",
+        "level": 2
+      },
+      {
+        "colorClass": "danger",
+        "description": "Prohibited",
+        "level": 3
+      }
+    ]
+
+    const options = data.map((option, index) => ({ id: index, text: option.category }));
+
+    const optionTemplate = (item) => {
+      if (!item.id) {
+        return item.text;
+      }
+
+      const itemData = data[item.id];
+      const riskData = risks.find(risk => risk.level === itemData.riskLevel);
+
+      const icon = `<span class="badge badge-dot badge-${riskData.colorClass}"></span>`;
+
+      return $(`<span>${icon} ${item.text}</span>`);
+    }
+
+    $(function() {
+      const descriptionSearch = $('.js-description-search');
+
+      descriptionSearch.select2({
+        data: options,
+        templateResult: optionTemplate,
+        width: '100%'
+      });
+    });
+
+    // Other New Quote JS
+
     $(function () {
       const $alertQuoteSaved = $('.js-saved-alert');
       const $alertQuoteSavedCloseBtn = $alertQuoteSaved.find('.js-saved-alert-close');
