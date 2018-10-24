@@ -52,520 +52,544 @@
               </button>
             </div>
 
-            <h3>New Quote</h3>
+            <form class="js-new-quote-form">
+              <h3>New Quote</h3>
 
-            <hr class="m">
+              <hr class="m">
 
-            <section>
-              <h5>Merchant Profile</h5>
+              <section>
+                <h5>Merchant Profile</h5>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="type">Type:</label>
-                    <select name="type" id="type" class="form-control">
-                      <option value="ntc">NTC</option>
-                      <option value="switcher">Switcher</option>
-                      <option value="switcher-no-statement">Switcher - No Statement</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="product">Product</label>
-                    <select name="product" id="product" class="form-control">
-                      <option disabled selected>Choose a product</option>
-                      <option value="cp">C&P</option>
-                      <option value="ecom">ECOM</option>
-                      <option value="vt">VT</option>
-                      <option value="pbl">PBL</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="settlement">Settlement Time</label>
-                    <select name="settlement" id="settlement" class="form-control">
-                      <option value="same-day">Same Day - £2.95</option>
-                      <option value="faster">Faster - £2.95 per month</option>
-                      <option value="standard">Standard - £0.00</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="country">Country</label>
-                    <select name="country" id="country" class="form-control">
-                      <option value="same-day">UK</option>
-                      <option value="faster">ROI</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-            </section>
-
-            <section>
-              <div class="form-group">
-                <label for="mcc">MCC Search</label>
-                <select class="js-description-search" id="mcc" name="mcc"></select>
-              </div>
-            </section>
-
-            <hr class="l">
-
-            <section>
-              <h5>Card Processing</h5>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bto">BTO per month</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">£</span>
-                      </div>
-                      <input type="text" class="form-control" name="bto" id="bto" placeholder="e.g. 100000">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="cto">CTO per month</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">£</span>
-                      </div>
-                      <input type="text" class="form-control" name="cto" id="cto" placeholder="e.g. 100000">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="atv">ATV</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">£</span>
-                      </div>
-                      <input type="text" class="form-control" name="atv" id="atv" placeholder="e.g. 100000">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="debit-split">Debit Split</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="debit-split" id="debit-split" placeholder="e.g. 50">
-                      <div class="input-group-append">
-                        <span class="input-group-text">%</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <hr class="l">
-
-            <section>
-              <h5>Rates</h5>
-
-              <div class="row">
-                <div class="col-md-3 col-lg-3">
-                  <div class="form-group">
-                    <label for="credit-card-rate">Credit Card <br class="d-none d-md-block">Rate</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="credit-card-rate" id="credit-card-rate">
-                      <div class="input-group-append">
-                        <span class="input-group-text">%</span>
-                      </div>
-                    </div>
-                    <small class="text-muted">Placeholder</small>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3">
-                  <div class="form-group">
-                    <label for="debit-card-rate">Debit Card <br class="d-none d-md-block">Rate</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="debit-card-rate" id="debit-card-rate">
-                      <div class="input-group-append">
-                        <span class="input-group-text">%</span>
-                      </div>
-                    </div>
-                    <small class="text-muted">Placeholder</small>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3">
-                  <div class="form-group">
-                    <label for="corp-credit-rate">Corporate <br class="d-none d-md-block"> Credit Rate</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="corp-credit-rate" id="corp-credit-rate">
-                      <div class="input-group-append">
-                        <span class="input-group-text">%</span>
-                      </div>
-                    </div>
-                    <small class="text-muted">Placeholder</small>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3">
-                  <div class="form-group">
-                    <label for="corp-debit-rate">Corporate <br class="d-none d-md-block"> Debit Rate</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="corp-debit-rate" id="corp-debit-rate">
-                      <div class="input-group-append">
-                        <span class="input-group-text">%</span>
-                      </div>
-                    </div>
-                    <small class="text-muted">Placeholder</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="mmsc">MMSC Fee <br>(per month)</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text" for="mmsc">£</label>
-                      </div>
-                      <select class="custom-select" id="mmsc" name="mmsc">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="auth-fee">Auth Fee <br>(per transaction)</label>
-                    <div class="input-group">
-                      <select class="custom-select" id="auth-fee" name="auth-fee">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                      <div class="input-group-append">
-                        <!-- This would be cents in ROI -->
-                        <label class="input-group-text" for="auth-fee">p</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="pci-mngmt">PCI Management <br>(per month)</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text" for="pci-mngmt">£</label>
-                      </div>
-                      <select class="custom-select" id="pci-mngmt" name="pci-mngmt">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-md-6 col-lg-6 col-xl-4">
+                <div class="row">
+                  <div class="col-md-6">
                     <div class="form-group">
-                      <label for="amex-holder">AMEX</label>
-                      <select name="amex-holder" id="amex-holder" class="form-control js-amex-select">
-                        <option disabled selected>Choose an option</option>
-                        <option value="amex-yes">Yes</option>
-                        <option value="amex-no">No</option>
-                        <option value="amex-existing">Existing</option>
+                      <label for="type">Type:</label>
+                      <select name="type" id="type" class="form-control">
+                        <option value="ntc">NTC</option>
+                        <option value="switcher">Switcher</option>
+                        <option value="switcher-no-statement">Switcher - No Statement</option>
                       </select>
                     </div>
                   </div>
 
-                  <div class="col-md-6 js-amex-mid-field d-none">
+                  <div class="col-md-6">
                     <div class="form-group">
-                      <label for="amex-mid">Please enter AMEX MID</label>
-                      <input type="text" name="amex-mid" id="amex-mid" class="form-control">
+                      <label for="product">Product</label>
+                      <select name="product" id="product" class="form-control">
+                        <option disabled selected>Choose a product</option>
+                        <option value="cp">C&P</option>
+                        <option value="ecom">ECOM</option>
+                        <option value="vt">VT</option>
+                        <option value="pbl">PBL</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="settlement">Settlement Time</label>
+                      <select name="settlement" id="settlement" class="form-control">
+                        <option value="same-day">Same Day - £2.95</option>
+                        <option value="faster">Faster - £2.95 per month</option>
+                        <option value="standard">Standard - £0.00</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="country">Country</label>
+                      <select name="country" id="country" class="form-control">
+                        <option value="same-day">UK</option>
+                        <option value="faster">ROI</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+              </section>
+
+              <section>
+                <div class="form-group">
+                  <label for="mcc">MCC Search</label>
+                  <select class="js-description-search" id="mcc" name="mcc"></select>
+                </div>
+              </section>
+
+              <hr class="l">
+
+              <section class="card-processing">
+                <h5>Card Processing</h5>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="bto">BTO per month</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">£</span>
+                        </div>
+                        <input type="text" class="form-control" name="bto" id="bto" placeholder="e.g. 100000">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="cto">CTO per month</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">£</span>
+                        </div>
+                        <input type="text" class="form-control" name="cto" id="cto" placeholder="e.g. 100000">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="atv">ATV</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">£</span>
+                        </div>
+                        <input type="text" class="form-control" name="atv" id="atv" placeholder="e.g. 100000">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="debit-split">Percentage of transactions <br class="d-none d-md-block">taken via Debit Card</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="debit-split" id="debit-split" placeholder="e.g. 50">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="l">
+
+              <section class="rates">
+                <h5>Rates</h5>
+
+                <div class="row">
+                  <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                      <label for="credit-card-rate">Credit Card <br class="d-none d-md-block">Rate</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="credit-card-rate" id="credit-card-rate">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                      <small class="text-muted">Placeholder</small>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                      <label for="debit-card-rate">Debit Card <br class="d-none d-md-block">Rate</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="debit-card-rate" id="debit-card-rate">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                      <small class="text-muted">Placeholder</small>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                      <label for="corp-credit-rate">Corporate <br class="d-none d-md-block"> Credit Rate</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="corp-credit-rate" id="corp-credit-rate">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                      <small class="text-muted">Placeholder</small>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 col-lg-3">
+                    <div class="form-group">
+                      <label for="corp-debit-rate">Corporate <br class="d-none d-md-block"> Debit Rate</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="corp-debit-rate" id="corp-debit-rate">
+                        <div class="input-group-append">
+                          <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                      <small class="text-muted">Placeholder</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="mmsc">MMSC Fee <br>(per month)</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="mmsc">£</label>
+                        </div>
+                        <select class="custom-select" id="mmsc" name="mmsc">
+                          <option selected>Choose...</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="auth-fee">Auth Fee <br>(per transaction)</label>
+                      <div class="input-group">
+                        <select class="custom-select" id="auth-fee" name="auth-fee">
+                          <option selected>Choose...</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <div class="input-group-append">
+                          <!-- This would be cents in ROI -->
+                          <label class="input-group-text" for="auth-fee">p</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="pci-mngmt">PCI Management <br>(per month)</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="pci-mngmt">£</label>
+                        </div>
+                        <select class="custom-select" id="pci-mngmt" name="pci-mngmt">
+                          <option selected>Choose...</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-xl-4">
+                      <div class="form-group">
+                        <label for="amex-holder">AMEX</label>
+                        <select name="amex-holder" id="amex-holder" class="form-control js-amex-select">
+                          <option disabled selected>Choose an option</option>
+                          <option value="amex-yes">Yes</option>
+                          <option value="amex-no">No</option>
+                          <option value="amex-existing">Existing</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 js-amex-mid-field d-none">
+                      <div class="form-group">
+                        <label for="amex-mid">Please enter AMEX MID</label>
+                        <input type="text" name="amex-mid" id="amex-mid" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <div>
+                          <label>JCB</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="jcb-yes" name="jcb" class="custom-control-input">
+                          <label class="custom-control-label" for="jcb-yes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="jcb-no" name="jcb" class="custom-control-input">
+                          <label class="custom-control-label" for="jcb-no">No</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <div>
+                          <label>Union Pay</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="union-yes" name="union" class="custom-control-input">
+                          <label class="custom-control-label" for="union-yes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="union-no" name="union" class="custom-control-input">
+                          <label class="custom-control-label" for="union-no">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              </section>
+
+              <hr class="l">
+
+              <section class="hardware">
+                <h5>Hardware</h5>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="hardware-contract-length">Contract Length</label>
+                      <select name="hardware-contract-length" id="hardware-contract-length" class="form-control">
+                        <option value="12">12 months</option>
+                        <option value="24">24 months</option>
+                        <option value="36">36 months</option>
+                        <option value="48">48 months</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="list-group mb-3 js-hardware-rows">
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-md-12 col-lg-3">
+                        <div class="form-group">
+                          <label for="hardware-terminal-type">Terminal Type</label>
+                          <select name="hardware-terminal-type" id="hardware-terminal-type" class="form-control">
+                            <option value="desktop">Desktop</option>
+                            <option value="bluetooth">Bluetooth</option>
+                            <option value="gprs">GPRS</option>
+                            <option value="mid">MID only</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12 col-lg-3">
+                        <div class="form-group">
+                          <label for="hardware-price">Price per month</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">£</span>
+                            </div>
+                            <input type="text" class="form-control" name="cto" id="cto" placeholder="e.g. 100000">
+                          </div>
+                          <small class="text-muted">Placeholder</small>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12 col-lg-3">
+                        <div class="form-group">
+                          <label for="hardware-quantity">Quantity</label>
+                          <input type="number" name="hardware-quantity" id="hardware-quantity" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-lg-3 d-flex align-items-center justify-content-center">
+                        <div class="form-group">
+                          <button type="button" class="btn btn-secondary js-hardware-remove">
+                            <i class="fas fa-times-circle mr-1"></i>
+                            Remove
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <button type="button" class="btn btn-primary js-hardware-add">
+                  <i class="fas fa-plus mr-1"></i>
+                  Add additional hardware
+                </button>
+
+              </section>
+
+              <hr class="l">
+
+              <section class="hardware-config">
+                <h5>Hardware configuration and installation</h5>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <div>
+                        <label>Cashback</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="cashback-yes" name="cashback" class="custom-control-input">
+                        <label class="custom-control-label" for="cashback-yes">Yes</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="cashback-no" name="cashback" class="custom-control-input">
+                        <label class="custom-control-label" for="cashback-no">No</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <div>
+                        <label>Gratuities</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="gratuities-yes" name="gratuities" class="custom-control-input">
+                        <label class="custom-control-label" for="gratuities-yes">Yes</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="gratuities-no" name="gratuities" class="custom-control-input">
+                        <label class="custom-control-label" for="gratuities-no">No</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <div>
+                        <label>Pre Auth</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="preauth-yes" name="preauth" class="custom-control-input">
+                        <label class="custom-control-label" for="preauth-yes">Yes</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="preauth-no" name="preauth" class="custom-control-input">
+                        <label class="custom-control-label" for="preauth-no">No</label>
+                      </div>
                     </div>
                   </div>
 
                   <div class="w-100"></div>
 
-                  <div class="col-md-6 col-lg-4">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <div>
-                        <label>JCB</label>
+                        <label>Install Type</label>
                       </div>
                       <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="jcb-yes" name="jcb" class="custom-control-input">
-                        <label class="custom-control-label" for="jcb-yes">Yes</label>
+                        <input type="radio" id="install-type-self" name="install-type" class="custom-control-input" value="install-type-self">
+                        <label class="custom-control-label" for="install-type-self">Self-install</label>
                       </div>
                       <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="jcb-no" name="jcb" class="custom-control-input">
-                        <label class="custom-control-label" for="jcb-no">No</label>
+                        <input type="radio" id="install-type-courier" name="install-type" class="custom-control-input" value="install-type-courier">
+                        <label class="custom-control-label" for="install-type-courier">Courier</label>
                       </div>
                     </div>
                   </div>
 
-                  <div class="col-md-6 col-lg-4">
+                  <div class="col-md-6 col-lg-5">
                     <div class="form-group">
-                      <div>
-                        <label>Union Pay</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="union-yes" name="union" class="custom-control-input">
-                        <label class="custom-control-label" for="union-yes">Yes</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="union-no" name="union" class="custom-control-input">
-                        <label class="custom-control-label" for="union-no">No</label>
+                      <label for="install-cost">Install Cost</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">£</span>
+                        </div>
+                        <input readonly type="text" class="form-control js-install-cost-field" name="install-cost" id="install-cost">
                       </div>
                     </div>
                   </div>
                 </div>
+              </section>
 
-            </section>
+              <hr class="l">
 
-            <hr class="l">
+              <section class="value-add">
+                <h5>Value Add Services</h5>
 
-            <section>
-              <h5>Hardware</h5>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="contract-length">Contract Length</label>
-                    <select name="contract-length" id="contract-length" class="form-control">
-                      <option value="12">12 months</option>
-                      <option value="24">24 months</option>
-                      <option value="36">36 months</option>
-                      <option value="48">48 months</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="contract-type">Terminal Type</label>
-                    <select name="contract-type" id="contract-type" class="form-control">
-                      <option value="desktop">Desktop</option>
-                      <option value="bluetooth">Bluetooth</option>
-                      <option value="gprs">GPRS</option>
-                      <option value="mid">MID only</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-            </section>
-
-            <hr class="l">
-
-            <section>
-
-              <div class="row">
-                <div class="col-md-6 col-lg-5">
-                  <div class="form-group">
-                    <div>
-                      <label>Cashback</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="cashback-yes" name="cashback" class="custom-control-input">
-                      <label class="custom-control-label" for="cashback-yes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="cashback-no" name="cashback" class="custom-control-input">
-                      <label class="custom-control-label" for="cashback-no">No</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-5">
-                  <div class="form-group">
-                    <div>
-                      <label>Gratuities</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="gratuities-yes" name="gratuities" class="custom-control-input">
-                      <label class="custom-control-label" for="gratuities-yes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="gratuities-no" name="gratuities" class="custom-control-input">
-                      <label class="custom-control-label" for="gratuities-no">No</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="w-100"></div>
-
-                <div class="col-md-6 col-lg-5">
-                  <div class="form-group">
-                    <div>
-                      <label>Pre Auth</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="preauth-yes" name="preauth" class="custom-control-input">
-                      <label class="custom-control-label" for="preauth-yes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="preauth-no" name="preauth" class="custom-control-input">
-                      <label class="custom-control-label" for="preauth-no">No</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-6">
-                  <div class="form-group">
-                    <div>
-                      <label>Install Type</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="install-type-self" name="install-type" class="custom-control-input">
-                      <label class="custom-control-label" for="install-type-self">Self-install</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="install-type-courier" name="install-type" class="custom-control-input">
-                      <label class="custom-control-label" for="install-type-courier">Courier</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-5">
-                  <div class="form-group">
-                    <label for="install-cost">Install Cost</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">£</span>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="till-rolls">Till Rolls</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="till-rolls">£</label>
+                        </div>
+                        <select class="custom-select" id="till-rolls" name="till-rolls">
+                          <option selected>Choose...</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
                       </div>
-                      <input readonly type="text" class="form-control" name="install-cost" id="install-cost">
                     </div>
                   </div>
-                </div>
-              </div>
-            </section>
 
-            <hr class="l">
-
-            <section>
-              <h5>Value Add Services</h5>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="till-rolls">Till Rolls</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text" for="till-rolls">£</label>
-                      </div>
-                      <select class="custom-select" id="till-rolls" name="till-rolls">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="mca">MCA</label>
+                      <select name="mca" id="mca" class="form-control">
+                        <option disabled selected>Choose an option</option>
+                        <option value="mca-yes">Yes</option>
+                        <option value="mca-no">No</option>
+                        <option value="mca-later">Send me info in 4 months time</option>
                       </select>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="mca">MCA</label>
-                    <select name="mca" id="mca" class="form-control">
-                      <option disabled selected>Choose an option</option>
-                      <option value="mca-yes">Yes</option>
-                      <option value="mca-no">No</option>
-                      <option value="mca-later">Send me info in 4 months time</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+                <div class="row">
 
-              <div class="row">
-
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <div>
-                      <label>SecurePro</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="securepro-yes" name="securepro" class="custom-control-input">
-                      <label class="custom-control-label" for="securepro-yes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="securepro-no" name="securepro" class="custom-control-input">
-                      <label class="custom-control-label" for="securepro-no">No</label>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="securepro">SecurePro</label>
+                      <select name="securepro" id="securepro" class="form-control">
+                        <option value="yes">Yes - £9.99 per month</option>
+                        <option value="no">No</option>
+                      </select>
                     </div>
                   </div>
-                </div>
 
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <div>
-                      <label>DCC</label>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="dcc">DCC</label>
+                      <select name="dcc" id="dcc" class="form-control">
+                        <option value="yes">Yes - £0.00</option>
+                        <option value="no">No</option>
+                      </select>
                     </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="dcc-yes" name="dcc" class="custom-control-input">
-                      <label class="custom-control-label" for="dcc-yes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="dcc-no" name="dcc" class="custom-control-input">
-                      <label class="custom-control-label" for="dcc-no">No</label>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="reporting">Reporting</label>
+                      <select name="reporting" id="reporting" class="form-control">
+                          <option value="yes">Yes - £5.00 per month</option>
+                          <option value="no">No</option>
+                        </select>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <div>
-                      <label>Reporting</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="reporting-basic" name="reporting" class="custom-control-input">
-                      <label class="custom-control-label" for="reporting-basic">Basic</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="reporting-pro" name="reporting" class="custom-control-input">
-                      <label class="custom-control-label" for="reporting-pro">Pro</label>
-                    </div>
+              </section>
+
+              <hr class="l">
+
+              <section class="buttons mb-3">
+                <div class="row">
+                  <div class="col-md-6 my-3">
+                    <button type="button" class="btn btn-secondary btn-block js-btn-quote-save" data-toggle="modal" data-target="#js-save-quote">
+                      <i class="far fa-save mr-1"></i>
+                      <span>Save as a new Quote</span>
+                    </button>
+                  </div>
+                  <div class="col-md-6 my-3">
+                    <a href="./../legal-entity-form.with-js.html" class="btn btn-primary btn-block">
+                      <span>Start Application</span>
+                      <i class="fas fa-angle-double-right"></i>
+                    </a>
                   </div>
                 </div>
-              </div>
-
-            </section>
-
-            <hr class="l">
-
-            <section class="buttons mb-3">
-              <div class="row">
-                <div class="col-md-6 my-3">
-                  <button type="button" class="btn btn-secondary btn-block js-btn-quote-save" data-toggle="modal" data-target="#js-save-quote">
-                    <i class="far fa-save mr-1"></i>
-                    <span>Save as a new Quote</span>
-                  </button>
-                </div>
-                <div class="col-md-6 my-3">
-                  <a href="./../legal-entity-form.with-js.html" class="btn btn-primary btn-block">
-                    <span>Start Application</span>
-                    <i class="fas fa-angle-double-right"></i>
-                  </a>
-                </div>
-              </div>
-            </section>
+              </section>
+            </form>
           </div>
 
           <aside class="col-12 col-lg-4">
@@ -578,7 +602,7 @@
                   <thead>
                     <tr>
                       <th>Product</th>
-                      <th>Value</th>
+                      <th>LTV</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -599,7 +623,7 @@
                       <td>£10</td>
                     </tr>
                     <tr>
-                      <td><strong>Total</strong></td>
+                      <td><strong>Total LTV</strong></td>
                       <td>£40</td>
                     </tr>
                   </tbody>
@@ -622,17 +646,17 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form class="js-new-quote-form">
+        <form class="js-save-quote-form">
           <div class="modal-body">
             <div class="form-group">
               <label for="quote-name">Type a name for this quote</label>
-              <input type="text" name="quote-name" id="quote-name" class="form-control js-new-quote-name" required>
+              <input type="text" name="quote-name" id="quote-name" class="form-control js-save-quote-name" required>
             </div>
 
             <p>Would you like to keep the data you have entered for a new quote?</p>
             <p>If selected, you will have the opportunity to create a new quote using the same data.</p>
             <div class="custom-control custom-checkbox">
-              <input checked class="custom-control-input js-new-quote-keep" id="quote-keep-data" name="quote-keep-data" type="checkbox">
+              <input checked class="custom-control-input js-save-quote-keep" id="quote-keep-data" name="quote-keep-data" type="checkbox">
               <label class="custom-control-label" for="quote-keep-data">Keep form data for a new quote</label>
             </div>
           </div>
@@ -714,12 +738,42 @@
     // Other New Quote JS
 
     $(function () {
+      const $newQuoteForm = $('.js-new-quote-form');
+
       // AMEX field
-      $('.js-amex-select').on('change', function () {
+      $newQuoteForm.on('change', '.js-amex-select', function () {
         if (this.value === 'amex-existing') {
           $('.js-amex-mid-field').removeClass('d-none');
         } else {
           $('.js-amex-mid-field').addClass('d-none');
+        }
+      });
+
+      // Hardware row controls
+      const $hardwareRows = $('.js-hardware-rows');
+      const $hardwareRowTemplate = $('.js-hardware-rows:first').html();
+      const $hardwareAddBtn = $('.js-hardware-add');
+
+      $hardwareAddBtn.on('click', function (evt) {
+        evt.preventDefault();
+        $hardwareRows.append($hardwareRowTemplate);
+      });
+
+      // as this button could be dynamic, we need to pass in remove class as second argument
+      $hardwareRows.on('click', '.js-hardware-remove', function (evt) {
+        evt.preventDefault();
+        $(this).closest('.list-group-item').remove();
+      });
+
+      // Hardware configuration self-install cost
+      const $installCostField = $('.js-install-cost-field');
+
+      $newQuoteForm.on('change', '[name="install-type"]', function() {
+        const $checkedOption = $('[name="install-type"]:checked');
+        if ($checkedOption.val() === 'install-type-self') {
+          $installCostField.val('0.00');
+        } else if ($checkedOption.val() === 'install-type-courier') {
+          $installCostField.val('40.00');
         }
       });
 
@@ -728,24 +782,24 @@
       const $alertQuoteSavedCloseBtn = $alertQuoteSaved.find('.js-saved-alert-close');
       const $alertQuoteSavedName = $alertQuoteSaved.find('.js-saved-alert-name');
 
-      const $newQuoteModal = $('#js-save-quote');
-      const $newQuoteForm = $newQuoteModal.find('.js-new-quote-form');
-      const $newQuoteName = $newQuoteModal.find('.js-new-quote-name');
-      const $newQuoteKeep = $newQuoteModal.find('.js-new-quote-keep');
+      const $saveQuoteModal = $('#js-save-quote');
+      const $saveQuoteForm = $saveQuoteModal.find('.js-save-quote-form');
+      const $saveQuoteName = $saveQuoteModal.find('.js-save-quote-name');
+      const $saveQuoteKeep = $saveQuoteModal.find('.js-save-quote-keep');
 
-      $newQuoteModal.on('submit', 'form', function (evt) {
-        if ($newQuoteKeep.is(':checked') && $newQuoteName.is(':valid')) {
+      $saveQuoteModal.on('submit', 'form', function (evt) {
+        if ($saveQuoteKeep.is(':checked') && $saveQuoteName.is(':valid')) {
           // prevent the form's default action, as we want to keep the data
           evt.preventDefault();
 
           // quote would need to be posted to the API here
 
           // close the modal
-          $newQuoteModal.modal('hide');
+          $saveQuoteModal.modal('hide');
 
           // display alert
-          $alertQuoteSavedName.text($newQuoteName.val());
-          $newQuoteName.val('');
+          $alertQuoteSavedName.text($saveQuoteName.val());
+          $saveQuoteName.val('');
           $alertQuoteSaved.removeClass('d-none').focus();
 
           // scroll to top of page
@@ -755,7 +809,7 @@
           }, 500);
         } else {
           // either post to the API in JS, or allow the form to submit by itself
-          // $newQuoteForm.submit();
+          // $saveQuoteForm.submit();
         }
       });
     });
